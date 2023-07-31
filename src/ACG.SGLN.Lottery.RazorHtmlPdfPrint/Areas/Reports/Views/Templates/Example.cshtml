@@ -1,0 +1,85 @@
+﻿@model PdfViewModel<List<string>>
+@{
+
+}
+
+<style type="text/css">
+    tr, th, td {
+        white-space: nowrap;
+        word-wrap: break-word;
+        text-align: center;
+        font-size: 6px;
+        word-break: break-all;
+    }
+
+    .pdf-report, .pdf-report tr, .pdf-report th {
+        border: 1px solid #222;
+    }
+    .pdf-label {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .pdf-value {
+        font-style: normal;
+    }
+
+    .pdf-section-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 15px 0px 5px 0px;
+    }
+
+    .pdf-report {
+        width: 100%;
+    }
+
+    .pdf-report th {
+        color: white;
+        background-color: rgb(0, 109, 49);
+    }
+
+    .report-header .report-footer {
+        visibility: hidden !important;
+    }
+</style>
+
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" style="text-align:center; font-weight:bolder;font-size:14px;">Rapport de vente</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table class="pdf-report">
+                    <thead>
+                        <tr>
+                            <th>N &deg;</th>
+                            <th>N&deg;Offre</th>
+                            <th>D. Offre</th>
+                            <th>D. Commande</th>
+                            <th>D. Facture</th>
+                            <th>D. Livraison</th>
+                            <th>Ancienneté (j)</th>
+                            <th>N° Série</th>
+                            <th>Client</th>
+                            <th>G.S.M Client</th>
+                            <th>Marque</th>
+                            <th>Modèle</th>
+                            <th>Commercial</th>
+                            <th>Expert Cotation</th>
+                            <th>Statut</th>
+                            <th>Qt</th>
+                            <th>CA KDH</th>
+                            <th>Prix d’achat KDH</th>
+                            <th>FRE Définitive KDH</th>
+                            <th>Marge KDH</th>
+                            <th>Taux Marge</th>
+                        </tr>
+                    </thead>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

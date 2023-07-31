@@ -1,0 +1,103 @@
+{
+  "createRequest": {
+    "test": "فرنسي",
+    "administratives": "إداري",
+    "description": "وصف",
+    "category": "فئة",
+    "commercials": "اعلانات تجارية",
+    "techniques": "التقنيات",
+    "document": "وثيقة",
+    "image": "صورة",
+    "audio": "صوتي",
+    "gallery": "حدد من المعرض",
+    "cameraOption": "خذ من الكاميرا",
+    "buttonText": "ارسل طلب",
+    "title": "إضافة طلب",
+    "titleBelow": "قم بإنشاء طلبك الجديد",
+    "permissionRequired": "الأذونات المطلوبة",
+    "allowHitRadio": "السماح لـ Lottery بتسجيل الصوت",
+    "noInternet": "لا يوجد اتصال بالإنترنت",
+    "sendVoice": "إرسال التسجيل",
+    "object": "مفعول",
+    "descriptionPlaceHolder": "أدخل وصفًا ...",
+    "holdText": "عقد للحفظ",
+    "alertCreateTitle": "إنشاء طلب",
+    "alertSuccessMessage": "تم إنشاء الطلب بنجاح",
+    "pdfAlert": "تنسيق pdf",
+    "PdfDescription": "الرجاء اختيار ملف pdf",
+    "cancel": "يلغي",
+    "delete": "حذف",
+    "contester": "تحدي",
+    "downloading": "جارى التحميل...",
+    "requestTitle": "طلباتي",
+    "requestTitleBelow": "استشارة طلباتك",
+    "downloadTitle": "SGLN document"
+  },
+  "common": {
+    "emptyData": "لايوجد بيانات",
+    "noReviewYet": "لا توجد أخبار لعرضها",
+    "noInternet": "لا يوجد اتصال بالإنترنت",
+    "defaultMessage": "هناك خطأ ما",
+    "permission": "طلب الاذن مرفوض!",
+    "request": "تحتاج إلى منح إذن التخزين لتنزيل الملف",
+    "Date": "تاريخ: ",
+    "ok": "نعم",
+    "downloadFailed": "التحميل فشل"
+  },
+  "documents": {
+    "docTitle": "DOCUMENTS OFFICIELS ET RESOURCES",
+    "docSubTitle": "Espace de téléchargements",
+    "mediaLibraryTitle": "مكتبة الوسائط",
+    "legalNotice": "إشعار قانوني",
+    "legalNoticeDescription": [
+      "All forms of formal communication have a pre-planned arrangement which every person who indulges in it, has to follow. This pre-planned arrangement is known as a format. Legal Notice is one such type of formal communication which has its own format which details how and what information needs to be provided in the notice.",
+      "It is necessary for a person to stick to the format of legal notice while drafting it. A well-drafted legal notice helps a person to avail the quickest remedy. It makes the recipient agree to the terms of the party who is sending the notice and thus eliminates the need to take the matter to court."
+    ]
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "usernamePlaceHolder": "اسم المستخدم",
+    "passwordPlaceHolder": "كلمة المرور",
+    "description": "Entrer votre identifiant et mot de passe pour se connecter a votre  espace",
+    "buttonText": "يقدم",
+    "passwordRegMsg": "ثمانية أحرف على الأقل ، حرف كبير واحد على الأقل ، حرف صغير واحد ، رقم واحد وحرف خاص واحد"
+  },
+  "menu": {
+    "demand": "طلباتي",
+    "documents": "الوثائق والموارد",
+    "alert": "أخبار",
+    "outils": "الأدوات",
+    "formation": "تمرين",
+    "facturation": "الفواتير",
+    "classification": "التصنيف والحوافز",
+    "mediaLibrary": "مكتبة الوسائط",
+    "logout": "تسجيل الخروج"
+  },
+  "changePassword": {
+    "title": "تغيير كلمة السر",
+    "currentPlaceHolder": "كلمة المرور الحالي",
+    "newPlaceHolder": "كلمة المرور الجديدة",
+    "buttonText": "يقدم",
+    "passwordRegMsg": "ثمانية أحرف على الأقل ، حرف كبير واحد على الأقل ، حرف صغير واحد ، رقم واحد وحرف خاص واحد"
+  },
+  "screenTitles": {
+    "request": "طلب الإدارة",
+    "consultation": "أخبار"
+  },
+  "training": {
+    "placeHolderText": "Rechercher une تشكيل ...",
+    "posted": "نشرت في ",
+    "trainingDate": "تشكيل التاريخ ",
+    "from": "ال",
+    "live": "ماضي",
+    "video": "من أجل التوصل إلى",
+    "title": "SGLN",
+    "noDocument": "لا يوجد مستند"
+  },
+  "resources": {
+    "postedOn": "تم النشر في "
+  },
+  "settingsScreen": {
+    "notification": "إشعارات"
+  }
+}

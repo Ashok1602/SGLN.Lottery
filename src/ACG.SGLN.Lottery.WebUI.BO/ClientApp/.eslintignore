@@ -1,0 +1,15 @@
+**/*.snap
+**/*.png
+**/*.json
+**/*.css
+**/*.svg
+**/*.ts
+**/*.scss
+**/*.jpg
+**/*.woff
+**/*.woff2
+**/*.ttf
+**/*.eot
+**/*.ico
+**/*.test.js
+**/*.config

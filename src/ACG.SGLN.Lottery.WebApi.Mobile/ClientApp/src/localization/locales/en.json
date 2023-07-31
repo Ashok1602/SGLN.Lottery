@@ -1,0 +1,159 @@
+{
+  "createRequest": {
+    "test": "french",
+    "administratives": "Administratives",
+    "description": "Description",
+    "category": "Categorie",
+    "commercials": "Commercials",
+    "techniques": "Techniques",
+    "document": "DOCUMENT",
+    "image": "IMAGE",
+    "audio": "AUDIO",
+    "gallery": "Select From Gallery",
+    "cameraOption": "Take From Camera",
+    "buttonText": "Envoyer la demande",
+    "title": "AJOUT D'UNE DEMANDE",
+    "titleBelow": "Creer votre nouvelle demande",
+    "permissionRequired": "Autorisations requises",
+    "allowHitRadio": "Autoriser Lottery à enregistrer de l'audio",
+    "noInternet": "Pas de connexion Internet",
+    "sendVoice": "Envoyer l’enregistrement",
+    "object": "object",
+    "descriptionPlaceHolder": "Saisir une description ...",
+    "holdText": "Maintenir pour enregistrer",
+    "alertCreateTitle": "Create request",
+    "alertSuccessMessage": "Created request successfully",
+    "pdfAlert": "pdf format",
+    "PdfDescription": "Please choose pdf file",
+    "cancel": "Go back",
+    "delete": "Delete",
+    "contester": "Contester",
+    "downloading": "downloading...",
+    "requestTitle": "MES DEMANDES",
+    "requestTitleBelow": "Consulation de vos demandes",
+    "downloadTitle": "SGLN document"
+  },
+  "common": {
+    "emptyData": "No data",
+    "noReviewYet": "No news to display.",
+    "noInternet": "No internet connection",
+    "defaultMessage": "Something went wrong",
+    "permission": "Permission Denied!",
+    "request": "You need to give storage permission to download the file",
+    "Date": "Date: ",
+    "ok": "OK",
+    "downloadFailed": "Download Failed",
+    "dh": "DH"
+  },
+  "documents": {
+    "docTitle": "DOCUMENTS OFFICIELS ET RESOURCES",
+    "docSubTitle": "Espace de téléchargements",
+    "mediaLibraryTitle": "MEDIA LIBRARY",
+    "legalNotice": "Legal Notice",
+    "legalNoticeDescription": [
+      "All forms of formal communication have a pre-planned arrangement which every person who indulges in it, has to follow. This pre-planned arrangement is known as a format. Legal Notice is one such type of formal communication which has its own format which details how and what information needs to be provided in the notice.",
+      "It is necessary for a person to stick to the format of legal notice while drafting it. A well-drafted legal notice helps a person to avail the quickest remedy. It makes the recipient agree to the terms of the party who is sending the notice and thus eliminates the need to take the matter to court."
+    ]
+  },
+  "login": {
+    "title": "Login",
+    "usernamePlaceHolder": "User name",
+    "description": "Entrer votre identifiant et mot de passe pour se connecter a votre  espace",
+    "passwordPlaceHolder": "Password",
+    "buttonText": "Submit",
+    "passwordRegMsg": "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+  },
+  "menu": {
+    "demand": "Mes demandes",
+    "documents": "Documents & Ressources",
+    "alert": "Actualité",
+    "outils": "Boîte à outils",
+    "formation": "Formation",
+    "facturation": "Facturation",
+    "classification": "Classification & Incentives",
+    "mediaLibrary": "Media library",
+    "logout": "Se déconnecter",
+    "dailyLimit": "Daily Limit"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "currentPlaceHolder": "Current password",
+    "newPlaceHolder": "New password",
+    "buttonText": "Submit",
+    "passwordRegMsg": "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+  },
+  "screenTitles": {
+    "request": "Request management",
+    "consultation": "News"
+  },
+  "training": {
+    "placeHolderText": "Find training ...",
+    "posted": "Posted on ",
+    "trainingDate": "Date formation ",
+    "from": "from ",
+    "live": "Past",
+    "video": "To come up",
+    "title": "SGLN",
+    "noDocument": "No data",
+    "majDate": "Date updated on",
+    "trainingTitle": "TRAINING AREA",
+    "inProgress": "In progress",
+    "testAvailable": "Test available",
+    "testSuccess": "Successfully completed",
+    "testFailed": "Completed with failure",
+    "trainingAvailable": "Training available",
+    "traingingSubTitle": "Space dedicated to training"
+  },
+  "resources": {
+    "postedOn": "Posted On"
+  },
+  "trainingCompleteScreen": {
+    "felicitations": "Congratulation",
+    "completedTrainingMsg": "You have completed the training; Would you like to start the test",
+    "gotoTest": "Start the test",
+    "return": "Return"
+  },
+  "testCompleteScreen": {
+    "youHaveCompletedTest": "You have completed the answers",
+    "sendAnswer": "Sending responses",
+    "return": "Return",
+    "recommencer": "Restart"
+  },
+  "resultScreen": {
+    "sorry": "We are sorry",
+    "wantToGiveTestAgain": "Would you like to start the test again?",
+    "downloadCertificate": "Download your certifuication"
+  },
+  "profileScreen": {
+    "myProfile": "MY PROFILE",
+    "myInfo": "My personal and commercial info",
+    "commercialInfo": "Commercial Info",
+    "personalInfo": "Personal Info",
+    "annualTurnOver": "Annual turnover",
+    "commisions": "Commissions",
+    "unPaid": "Unpaid",
+    "currentBalance": "Current balance",
+    "retailerName": "RETAILER NAME",
+    "contactNo": "CONTRACT NUMBER",
+    "dealerCode": "SGLN DEALER CODE",
+    "dealerCodeOperator": "DEALER CODE OPERATOR",
+    "rc": "RC",
+    "tp": "TP",
+    "ice": "ICE",
+    "address": "LOCAL ADDRESS",
+    "telephone": "TELEPHONE"
+  },
+  "invoiceScreen": {
+    "invoiceArea": "INVOICE AREA",
+    "invoiceDesc": "Space dedicated to training ",
+    "dateOfInvoice": "Date of invoice",
+    "amount": "Amount",
+    "allPaidMsg": "Amount paid for all invoices for the last 6 months",
+    "unPaidMsg": "Unpaid amount for all invoices for the last 6 months"
+  },
+  "settingsScreen": {
+    "notification": "Notifications",
+    "unPaidMsg": "Unpaid amount for all invoices for the last 6 months",
+    "total": "Total"
+  }
+}

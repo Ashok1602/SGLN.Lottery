@@ -1,0 +1,864 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ACG.SGLN.Lottery.WebUI.BO</name>
+    </assembly>
+    <members>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnoucementVm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController">
+            <summary>
+            Announcements
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.Create(ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnoucementVm)">
+            <summary>
+            Create new request
+            </summary>
+            <param name="vm">request data</param>
+            <returns>Created request object</returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.AnnouncementCriterea)">
+            <summary>
+            Get Announcements list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="announcementCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.GetById(System.Guid)">
+            <summary>
+            Get Announcement by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.Delete(System.Guid)">
+            <summary>
+            Delete Announcement by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.Publish(System.Guid)">
+            <summary>
+            Publish Announcement 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AnnouncementsController.Unpublish(System.Guid)">
+            <summary>
+            UnPublish Announcement 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.AuthController">
+            <summary>
+            Auth
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AuthController.SignIn(ACG.SGLN.Lottery.Application.Users.UserSignInDto)">
+            <summary>
+            Sign In Command
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.AuthController.LogOut(System.String)">
+            <summary>
+            Logout Command
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController">
+            <summary>
+            Cities (for testing)
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.Get">
+            <summary>
+            List all cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.GetAll">
+            <summary>
+            List all cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.Create(ACG.SGLN.Lottery.Domain.Entities.City)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.Update(System.Int32,ACG.SGLN.Lottery.Domain.Entities.City)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.CitiesController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.DataIntegrationController">
+            <summary>
+            Mise à jour des données BA/facture
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DataIntegrationController.CreateRetailers(System.Collections.Generic.List{ACG.SGLN.Lottery.Application.Retailers.RetailerDto})">
+            <summary>
+            Add new Retailers and create a user account for them
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DataIntegrationController.UpdateRetailers(System.Collections.Generic.List{ACG.SGLN.Lottery.Application.Retailers.RetailerUpdateDto})">
+            <summary>
+            Update Retailers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DataIntegrationController.CreateRetailer(ACG.SGLN.Lottery.Application.Retailers.RetailerDto)">
+            <summary>
+            Add a new Retailer and create a user account for him
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DataIntegrationController.UpdateRetailer(System.String,ACG.SGLN.Lottery.Application.Retailers.RetailerUpdateDto)">
+            <summary>
+            Update a Retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController">
+            <summary>
+            Document upload/download
+            </summary>
+        </member>
+        <member name="P:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController.Upload(ACG.SGLN.Lottery.WebUI.Common.Models.BufferedFileUpload)">
+            <summary>
+            Upload a document
+            </summary>
+            <param name="fileUpload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController.Download(ACG.SGLN.Lottery.Domain.Enums.DocumentType,System.Guid,System.Boolean)">
+            <summary>
+            Download a document
+            </summary>
+            <param name="type"></param>
+            <param name="id"></param>
+            <param name="isThumbnail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController.DownloadRequestNatureImage(ACG.SGLN.Lottery.Domain.Enums.RequestNatureType)">
+            <summary>
+            Download static documents by Value
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.DocumentsController.Delete(ACG.SGLN.Lottery.Domain.Enums.DocumentType,System.Guid)">
+            <summary>
+            Delete a document
+            </summary>
+            <param name="type"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.ExcellenceProgramsController">
+            <summary>
+            Excellence Program
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ExcellenceProgramsController.GetIncentives(ACG.SGLN.Lottery.Domain.Entities.Criterias.IncentiveCriterea)">
+            <summary>
+            Get Incentives
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.NotificationsController">
+            <summary>
+            Notifications (for testing)
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.NotificationsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.NotificationCriterea)">
+            <summary>
+            List all Notifications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.NotificationsController.GetById(System.Guid)">
+            <summary>
+            Get Notification by id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.NotificationsController.GetStrippedNotifications">
+            <summary>
+            All Alerts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.NotificationsController.Create(ACG.SGLN.Lottery.Application.Notifications.NotificationDto)">
+            <summary>
+            Creates a Notification
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController">
+            <summary>
+            Reporting controller
+            </summary>
+        </member>
+        <member name="P:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateTrainingsByModuleReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.TrainingsByModuleReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Trainings By Module report 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateTrainingsByRetailerReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.TrainingsByRetailerReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Trainings By Retailer report 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateIncentivesReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.IncentivesReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Incentives report 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateRatioRequestsReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.RatioRequestsReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Ratio Requests Report
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateRequestsReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestsReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Requests report 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GenerateProcessingTimeRequestsReport(ACG.SGLN.Lottery.Domain.Entities.Criterias.ProcessingTimeRequestsReportCriterea,System.Nullable{System.DateTime},System.Nullable{System.DateTime},ACG.SGLN.Lottery.Domain.Enums.DocumentFormat)">
+            <summary>
+            Generate Processing Time Requests report 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.ReportingController.GetRetailerReport(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Get Retailers Report
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController">
+            <summary>
+            RequestCategorys (for testing)
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.RequestCategoryVm">
+            <summary>
+            RequestCategorys VM
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Create(ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.RequestCategoryVm)">
+            <summary>
+            Create a RequestCategory
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestCategoriesCriterea)">
+            <summary>
+            List all RequestCategorys
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Update(ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.RequestCategoryVm,System.Guid)">
+            <summary>
+            Update a RequestCategory
+            </summary>
+            <param name="vm"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Delete(System.Guid)">
+            <summary>
+            Delete a RequestCategory
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Activate(System.Guid)">
+            <summary>
+            Activates a RequestCategory
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.Deactivate(System.Guid)">
+            <summary>
+            Deactivate a RequestCategory
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.GetStripped">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCategoriesController.GetStrippedByNature(ACG.SGLN.Lottery.Domain.Enums.RequestNatureType)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCommentsController">
+            <summary>
+            RequestComments (for testing)
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCommentsController.Create(ACG.SGLN.Lottery.Application.RequestComments.RequestCommentDto)">
+            <summary>
+            Create a RequestComment
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestCommentsController.Delete(System.Guid)">
+            <summary>
+            Delete a RequestComment
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController">
+            <summary>
+            RequestObjects (for testing)
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.RequestObjectVm">
+            <summary>
+            RequestObjects VM
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Create(ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.RequestObjectVm)">
+            <summary>
+            Create a RequestObject
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestObjectCriterea)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.GetStrippedByCategory(System.Guid)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Update(System.Guid,ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.RequestObjectVm)">
+            <summary>
+            Update a RequestObject
+            </summary>
+            <param name="vm"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Delete(System.Guid)">
+            <summary>
+            Delete a RequestObject
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Activate(System.Guid)">
+            <summary>
+            Activates a RequestObject
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Deactivate(System.Guid)">
+            <summary>
+            Deactivate a RequestObject
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController">
+            <summary>
+            Requests
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestCriterea)">
+            <summary>
+            Get Requests list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="requestCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.GetById(System.Guid)">
+            <summary>
+            Get Request by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.Assign(System.Guid,System.Boolean,System.Nullable{ACG.SGLN.Lottery.Domain.Enums.ProcessingDirectionType})">
+            <summary>
+            assing request 
+            </summary>
+            <param name="id"></param>
+            <param name="isExternal"></param>
+            <param name="processingDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.TestMail(System.Collections.Generic.List{System.String})">
+            <summary>
+            Test
+            </summary>
+            <param name="emails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.GetCommentsById(System.Guid)">
+            <summary>
+            RequestComment by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.Start(System.Guid)">
+            <summary>
+            start request 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestsController.Close(System.Guid,ACG.SGLN.Lottery.Application.Requests.CloseRequestDto)">
+            <summary>
+            close request 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController">
+            <summary>
+            Retailers
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.ExcelFileVm">
+            <summary>
+            file VM
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RetailerCriterea)">
+            <summary>
+            Get retailers list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="retailerCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.GetFromFile">
+            <summary>
+            Get Retailers From excel file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.GetById(System.Guid)">
+            <summary>
+            Get Retailer by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.GetAgent(System.Guid)">
+            <summary>
+            Get Retailer Agent 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.AssignAgent(System.Guid,System.String)">
+            <summary>
+            Sets Retailer Agent 
+            </summary>
+            <param name="id"></param>
+            <param name="agentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.AssignSalesRepresentative(System.Guid,ACG.SGLN.Lottery.Application.Retailers.SalesRepresentativeDto)">
+            <summary>
+            Sets Retailer Sales Representative 
+            </summary>
+            <param name="id"></param>
+            <param name="salesRepresentativedto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.MassAssignSalesRepresentative(ACG.SGLN.Lottery.Application.Retailers.SalesRepresentativeDto)">
+            <summary>
+            Sets mass Retailer Sales Representative 
+            </summary>
+            <param name="salesRepresentativedto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.GetStrippedRetailers(System.String)">
+            <summary>
+            List Stripped Retailers
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RetailersController.GetMunicipalities">
+            <summary>
+            List Municipalities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RolesController">
+            <summary>
+            Roles
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RolesController.Get">
+            <summary>
+            Get roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.SupportDocumentsController">
+            <summary>
+            Support Documents
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.SupportDocumentsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.ApplicationDocumentCriterea)">
+            <summary>
+            Get ApplicationDocuments list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="ApplicationDocumentCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController">
+            <summary>
+            TrainingModules
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController.Create(System.String)">
+            <summary>
+            Create a TrainingModule
+            </summary>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController.Get">
+            <summary>
+            List all TrainingModules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController.GetStripped">
+            <summary>
+            List stripped TrainingModules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController.GetById(System.Guid)">
+            <summary>
+            List TrainingModule by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingModulesController.Delete(System.Guid)">
+            <summary>
+            Delete a TrainingModule
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController">
+            <summary>
+            Trainings
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.TrainingCriterea)">
+            <summary>
+            Get Trainings list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="trainingCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.GetById(System.Guid)">
+            <summary>
+            Get Training by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.GetTrainingQuestionsById(System.Guid)">
+            <summary>
+            Get Training by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.GetTrainingSlidesById(System.Guid)">
+            <summary>
+            Get Training slides by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.CreateLiveTraining(ACG.SGLN.Lottery.Application.Trainings.LiveTrainingDto)">
+            <summary>
+            Create live training
+            </summary>
+            <param name="liveTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.EditLiveTraining(System.Guid,ACG.SGLN.Lottery.Application.Trainings.LiveTrainingDto)">
+            <summary>
+            Edit live training
+            </summary>
+            <param name="id"></param>
+            <param name="liveTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.EditInteractiveTraining(System.Guid,ACG.SGLN.Lottery.Application.Trainings.InteractiveTrainingDto)">
+            <summary>
+            Edit Interactive training
+            </summary>
+            <param name="id"></param>
+            <param name="interactiveTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.CreateVideoTraining(ACG.SGLN.Lottery.Application.Trainings.VideoTrainingDto)">
+            <summary>
+            Create video training
+            </summary>
+            <param name="videoTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.EditVideoTraining(System.Guid,ACG.SGLN.Lottery.Application.Trainings.VideoTrainingDto)">
+            <summary>
+            Edit video training
+            </summary>
+            <param name="id"></param>
+            <param name="videoTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.CreateInteractiveTraining(ACG.SGLN.Lottery.Application.Trainings.InteractiveTrainingDto)">
+            <summary>
+            Create interactive training
+            </summary>
+            <param name="interactiveTrainingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.Publish(System.Guid)">
+            <summary>
+            Publish Training 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.TrainingsController.Unpublish(System.Guid)">
+            <summary>
+            UnPublish Training 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController">
+            <summary>
+            Users
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.UserCriteria)">
+            <summary>
+            Get users list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="userCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.GetById(System.String)">
+            <summary>
+            Get user by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.GetByRoles(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Users by role 
+            </summary>
+            <param name="rolenames">User RoleName</param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.GetConnectedUser">
+            <summary>
+            Get logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.ChangePassword(ACG.SGLN.Lottery.Application.Users.ChangePasswordData)">
+            <summary>
+            Changes usr passuser
+            </summary>
+            <param name="changePasswordData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.DeleteUser(System.String)">
+            <summary>
+            Delete user
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.CreateUser(ACG.SGLN.Lottery.Application.Users.UserDto)">
+            <summary>
+            Create user
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.UpdateUser(System.String,ACG.SGLN.Lottery.Application.Users.UserUpdateDto)">
+            <summary>
+            Update user details 
+            </summary>
+            <param name="id"></param>
+            <param name="userUpdateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.UpdateUserRole(System.String,System.String)">
+            <summary>
+            Update user role
+            </summary>
+            <param name="userId"></param>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.ValidateRetailer(System.String)">
+            <summary>
+            Validates a retailer account
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.Activate(System.String)">
+            <summary>
+            Activates a User
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.Deactivate(System.String)">
+            <summary>
+            Deactivate a User
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.ForgotPassword(System.String)">
+            <summary>
+            Init ForgotPassword
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.UsersController.ResetPassword(ACG.SGLN.Lottery.Application.Users.UserResetDto)">
+            <summary>
+            Reset Password
+            </summary>
+            <param name="resetDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Startup.GetConverters">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

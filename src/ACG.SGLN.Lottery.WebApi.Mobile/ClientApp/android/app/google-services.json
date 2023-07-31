@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "958764667352",
+    "project_id": "sgln-lottery",
+    "storage_bucket": "sgln-lottery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958764667352:android:9fb2f6571b76a448fe62ad",
+        "android_client_info": {
+          "package_name": "acg.sgln.lottery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958764667352-kfnl07n5jviapfcnk8j1qfqagn6iqnhf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCowzVE8bQcXWRLv5o0Oz6wCodPskhamIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958764667352-kfnl07n5jviapfcnk8j1qfqagn6iqnhf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "958764667352-ts3c1j8hdih8grrbe6fkhl82kjg4k2ps.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "acg.sgln.lottery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,74 @@
+.header-textcolor {
+  color: #ffffff;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.flexend {
+  display: flex;
+  justify-content: flex-end;
+}
+.errormsg {
+  border: 1px solid #ff0000 !important;
+  border-color: #ff0000 !important;
+  border-radius: 4px;
+  .css-yk16xz-control {
+    border-width: 0 !important;
+  }
+}
+.modal-header {
+  // background-color: #c41e21;
+  background-color: #3D85C0 !important;
+  color: #ffffff !important;
+  .close {
+    color: #ffffff !important;
+  }
+}
+.modal-content {
+  border: unset;
+}
+.modal-title {
+  color: #ffffff !important;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+  input[type="select"] {
+    width: 330px;
+  }
+}
+.fontbold {
+  font-weight: bold;
+}
+
+.rw-popup-container {
+  position: static;
+  z-index: 1005;
+  top: 100%;
+  left: -6px;
+  right: -6px;
+}
+.confirm-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+.fileError {
+  border-color: #eb3c3c !important;
+}
+.card-image {
+  width: 100px;
+}
+.secondary-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+.card-type {
+  margin-top: 30px;
+}
+.col-margin {
+  margin-left: -10px !important;
+}
+.cardtype {
+  margin-left: -30px !important;
+}

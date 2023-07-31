@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>ACG.SGLN.Lottery.Domain</RootNamespace>
+        <AssemblyName>ACG.SGLN.Lottery.Domain</AssemblyName>
+    </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Exceptions\**" />
+      <Compile Remove="ValueObjects\**" />
+      <EmbeddedResource Remove="Exceptions\**" />
+      <EmbeddedResource Remove="ValueObjects\**" />
+      <None Remove="Exceptions\**" />
+      <None Remove="ValueObjects\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Entities\Retailer.cs~RF5717c6.TMP" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\EnumResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>EnumResources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\EnumResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

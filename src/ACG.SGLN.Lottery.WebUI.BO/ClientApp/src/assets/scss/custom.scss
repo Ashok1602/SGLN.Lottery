@@ -1,0 +1,438 @@
+@import "./components.scss";
+.noti-icon .badge {
+  left: 23px;
+}
+.mt-2 {
+  margin-top: 20px !important;
+}
+
+.dataTables_filter,
+.dataTables_paginate {
+  float: right;
+}
+
+.rdw-editor-main {
+  border: 1px solid #eeeef5;
+  height: 239px;
+}
+.dz-message {
+  text-align: center;
+  padding: 100px;
+}
+.fcYNFc {
+  background-color: #ffffff !important;
+}
+.task-box {
+  border: 1px solid #e1e1e6;
+}
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.ReactModal__Overlay {
+  z-index: 1001 !important;
+}
+
+.fc-event .fc-content {
+  padding: 5px;
+  color: #fff;
+}
+.chat-conversation .right .conversation-list {
+  margin-right: 15px;
+}
+
+.external-event {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  background-color: #7cb342 !important;
+}
+
+//for react table card
+.top-margin {
+  margin-top: 80px;
+  box-shadow: 0 1px 4px 0 #00000024;
+}
+
+.card-header h1 {
+  float: left;
+}
+.card-header .btn {
+  float: right;
+}
+.page-select {
+  width: 70px !important;
+  height: 30px !important;
+  display: inline-block !important;
+  margin-right: 5px !important;
+  padding: 0px 0.75rem !important;
+}
+.success-icon {
+  color: #1c8421 !important;
+}
+.danger-icon {
+  color: #f44336 !important;
+}
+.red-icon {
+  color: #8a130b !important;
+}
+.warning-icon {
+  color: #ff9800 !important;
+}
+.primary-icon {
+  color: #9c27b0 !important;
+}
+.green-icon {
+  color: #37f508 !important;
+}
+.info-icon {
+  color: #00acc1 !important;
+}
+.edit-icon {
+  color: #00a1ff !important;
+}
+.btn.disabled,
+.btn:disabled {
+  cursor: not-allowed;
+}
+.close-button {
+  color: black;
+  vertical-align: inherit;
+}
+.overlay {
+  width: 200px;
+  height: 600px;
+  position: absolute; /*Can also be `fixed`*/
+  left: 0;
+  right: 0;
+  top: 250px;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 9999;
+  max-width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+.backdrop-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+/********************************************************* React Table *********************************************************/
+.table {
+  thead tr,
+  tbody tr {
+    text-align: center !important;
+  }
+  tbody td {
+    cursor: pointer;
+    max-width: 100px;
+  }
+  thead th {
+    vertical-align: top;
+  }
+  .tableHeader {
+    background-color: #3e89c3;
+    font-size: 14px;
+    width: 130px;
+  }
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rt-pagination {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: stretch; */
+  flex-wrap: wrap;
+  padding: 3px;
+  .-previous,
+  .-next {
+    flex: 1 1;
+    text-align: center;
+    .full-width {
+      width: 100%;
+    }
+  }
+  .-center {
+    flex: 1.5 1;
+    text-align: center;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+//add announence modal dropzone height
+.reduce-height .MuiDropzoneArea-root {
+  min-height: 0px !important;
+}
+body {
+  margin: 1em;
+}
+.quote {
+  margin: 0;
+  padding: 1em;
+  border-radius: 10px;
+  border: solid 1px #f4f7f8;
+  background-color: #f4f7f8;
+}
+
+//
+.page-content {
+  background-image: linear-gradient(to top, #cad9f3, #eaf2ff);
+  padding-left: 63px;
+  padding-right: 77px;
+  .update-button {
+    width: 304px;
+    height: 57px;
+    border-radius: 14px;
+    color: #323c47;
+    background-color: #ffc800;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #323c47;
+    margin-top: 9px;
+  }
+  .title {
+    color: #233539;
+    font-size: 21px;
+    line-height: 28.8px;
+    letter-spacing: -0.7px;
+    margin-top: 24.2px;
+  }
+  .mt-5 {
+    border-radius: 24px;
+  }
+  .content-data {
+    .h2 {
+      float: right;
+    }
+  }
+}
+.component-title {
+  width: 149px;
+  height: 23px;
+  margin: 12.5px 0 13.5px 10.4px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.69;
+  letter-spacing: -0.19px;
+  text-align: left;
+  color: #323c47;
+}
+.input-data {
+  border-radius: 10px;
+  border: solid 1px#f4f7f8;
+  border: #cdd0e3;
+  background-color: black;
+}
+.card-sub-title {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  margin-left: 65px;
+  color: #2c3e50;
+}
+
+.info-card-sub-title {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+.vertical-scroll {
+  overflow: auto;
+}
+// .vertical-scroll::-webkit-scrollbar {
+//   width: 0px;
+//   background: transparent; /* make scrollbar transparent */
+// }
+
+.field-style {
+  border: 1px solid #f4f7f8;
+  border-radius: 10px;
+  background-color: #f4f7f8;
+  font-family: Poppins;
+  font-style: normal;
+  color: #323c47;
+  font-weight: 500;
+}
+.request-attechment-content {
+  padding: 32px 25px 36px 25px;
+  border-radius: 15px;
+  background-color: #f4f7f8;
+  margin: 0px 10px 22px 20px !important;
+  img {
+    float: left;
+    width: 30px;
+    height: 38px;
+    margin: 0 19.6px 0 0;
+    object-fit: contain;
+  }
+}
+.request-attechment-content h4 {
+  margin: 6px 0 7px 19.6px;
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.22px;
+  text-align: left;
+  color: #323c47;
+}
+.comment-button Button {
+  float: right;
+  width: 53px;
+  height: 54px;
+  margin-right: 29px;
+  margin-bottom: 29px;
+  border-radius: 26.5px;
+  background-color: #ffc800;
+  border: 1px solid #ffc800;
+}
+
+.reduce-height .MuiDropzoneArea-text {
+  display: none !important;
+}
+.marginTopStyles {
+  margin-top: 12px !important;
+  font-size: 15px;
+  color: #323c47;
+  font-weight: 500;
+  line-height: 24px;
+}
+.request-card-data {
+  border-radius: 15px;
+}
+.retailers-container {
+  border: 1px solid #d0d2d4;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+.retailer-style {
+  background-color: #d0d2d4;
+  padding: 5px;
+  font-weight: 500;
+  margin: 5px;
+}
+.modal-header_bg-soft-primary {
+  .text-primary {
+    color: white;
+  }
+}
+
+.custom-color {
+  background-color: rgba(85, 110, 230, 0.25) !important;
+}
+
+.custom-text-color {
+  color: #556ee6;
+}
+
+.imgContainerStyle {
+  border: 1px solid #cacdd1;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 3px;
+}
+.retailer-drop-down-button {
+  width: 180px;
+  height: 50px;
+  border-radius: 14px;
+  background-color: #ffc800;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  margin-top: 9px;
+  color: #323c47;
+}
+.retailer-badges {
+  margin-top: -10px;
+  margin-left: -10px;
+  background-color: #ffc800;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #323c47;
+}
+.back-button a {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 40px;
+}
+
+.add-slides-qustions Button {
+  height: 24px;
+  // width: 146px;
+  left: 200px;
+  top: 905px;
+  background: #ffffff;
+  padding: 15px;
+  border: 0 none;
+  color: #004a8a;
+}
+.question-radio-button {
+  background: #ffffff;
+  border: 0 none;
+}
+
+.slides-img {
+  border: 1px solid #cacdd1;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 3px;
+  margin-top: 23px;
+  height: 150px;
+}
+
+//for sidebar color issue only
+body[data-sidebar="dark"] .mm-active {
+  color: #556ee6 !important;
+}
+
+body[data-sidebar="dark"] .mm-active > i {
+  color: #556ee6 !important;
+}

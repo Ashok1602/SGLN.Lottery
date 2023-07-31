@@ -1,0 +1,408 @@
+//css for public Home page
+.create-space {
+  height: max-content;
+  margin-bottom: 400px;
+}
+.headerHeigh {
+  height: 500px;
+}
+.controll-scroll {
+  overflow-x: hidden; //horizontal
+  overflow-y: scroll; //vertical
+}
+.left-card {
+  margin-top: -250px;
+  margin-left: 18px;
+  height: 300px;
+  background-color: #377a00;
+  z-index: 100;
+}
+.right-card {
+  margin-top: -300px;
+  margin-left: -100px;
+  height: 400px;
+  width: 700px;
+}
+.image-onCard {
+  margin-left: 50px;
+  height: 250px;
+  width: 600px;
+  z-index: 102;
+  margin-top: 75px;
+}
+.btn-leftCard {
+  margin-top: 80px;
+}
+.btn-size {
+  width: 150px;
+}
+.btn-white {
+  background-color: #ffffff;
+  border-radius: 0%;
+  width: 40px;
+  height: 40px;
+}
+.text-color {
+  color: #ffffff !important;
+  text-align: left;
+  letter-spacing: 0px;
+}
+.appropos-left-card {
+  height: 300px;
+}
+.appropos-right-card {
+  height: 300px;
+  background-color: #c41e21;
+}
+.appropos-marginTop {
+  margin-top: 100px;
+}
+.appropos-marginLeft {
+  margin-left: 20px;
+  margin-right: -50px;
+  margin-top: -50px;
+  z-index: 100;
+}
+.appropos-marginRight {
+  margin-right: 20px;
+}
+.btn-se-connecter {
+  width: 150px;
+  background-color: #ffffff;
+  color: #c41e21;
+}
+
+.actualities-marginTop {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.actualities-left-Card {
+  margin-left: 10px;
+  height: 400px;
+  width: 350px;
+}
+.actualities-middle-card {
+  height: 500px;
+  background-color: red;
+  width: 350px;
+}
+.actualities-right-card {
+  margin-right: 10px;
+  height: 500px;
+  width: 350px;
+  background-color: gray;
+}
+.image-actualities-onCard {
+  width: 340px;
+  height: 200px;
+  margin-left: 26px;
+  margin-top: 20px;
+}
+.actualities-inner-Card {
+  background-color: yellow;
+  width: 350px;
+  height: 100px;
+  margin-top: -70px;
+  margin-left: 35px;
+}
+.map-space {
+  margin-top: 100px;
+  height: 400px;
+  margin-bottom: 100px;
+}
+.bottom-space {
+  margin-top: 100px;
+  height: 400px;
+}
+//bottom
+.left-first-bottom-card-topImage {
+  height: 300px;
+}
+.left-first-bottom-card-bottomImage {
+  height: 300px;
+}
+.middle-bottom-card-middleImage {
+  height: 625px;
+}
+.right-first-bottom-card-topImage {
+  height: 280px;
+}
+.right-first-bottom-card-bottomImage {
+  height: 280px;
+}
+.LE-PORTAIL {
+  margin-top: 106px;
+}
+//header css
+.header-background-image {
+  background-image: url("../images/greenBackground.jpeg");
+  // background-image: url("../images/brands/headerBackground.png") ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.font-size-header {
+  font-size: small;
+  margin-left: 20px;
+}
+.header-logo {
+  height: "75px";
+  background-color: "#ac2729";
+}
+.header-horizontal-line {
+  background-color: "white";
+  height: 0.1;
+}
+//mission index page css
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dark-btn {
+  background-color: #c41e21 !important;
+  color: #ffffff !important;
+  border-color: #c41e21 !important;
+  box-shadow: 1px solid #c41e21 !important;
+  &:hover,
+  &:active {
+    background-color: #c41e21 !important;
+    color: #ffffff !important;
+    border-color: #c41e21 !important;
+    box-shadow: 1px solid #c41e21 !important;
+  }
+}
+
+.dark-btn-outline {
+  border-color: #c41e21 !important;
+  color: #c41e21 !important;
+  background-color: #ffffff !important;
+  box-shadow: 1px solid #c41e21 !important;
+  &:hover,
+  &:active {
+    background-color: #c41e21 !important;
+    color: #ffffff !important;
+    box-shadow: 1px solid #c41e21 !important;
+  }
+}
+.success-btn,
+.success-btn :hover,
+.success-btn :active {
+  border-color: #1c8421 !important;
+  background-color: #1c8421 !important;
+  color: #ffffff !important;
+  box-shadow: 1px solid #1c8421 !important;
+}
+.warning-btn,
+.warning-btn :hover,
+.warning-btn :active {
+  border-color: #ed5207 !important;
+  background-color: #ed5207 !important;
+  color: #ffffff !important;
+  box-shadow: 1px solid #ed5207 !important;
+}
+.success-btn-outline {
+  border-color: 1.5px #1c8421 !important;
+  color: #1c8421 !important;
+  background-color: #ffffff !important;
+  box-shadow: 1.5px solid #1c8421 !important;
+  &:hover,
+  &:active {
+    background-color: #1c8421 !important;
+    color: #ffffff !important;
+  }
+}
+
+.footer {
+  bottom: 0;
+  border-top: "1px solid grey ";
+  padding: 15px 0;
+  z-index: 4;
+  position: unset;
+  background-color: #191919 !important;
+  height: auto;
+  color: #ffffff !important;
+  margin-top: 30px;
+}
+.subfooter {
+  top: -50px !important;
+  position: relative;
+  background-color: #252525;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subfooter > .row {
+  margin: auto;
+}
+.copy-rights {
+  color: #ffffff !important;
+  padding: 15px;
+  text-align: center;
+  background-color: #252525;
+}
+.footer-link {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+.display-flex {
+  display: flex;
+}
+.link,
+.link:hover {
+  color: #ffffff !important;
+}
+.left-text {
+  margin-left: 40px;
+  font-size: 16px;
+}
+.right-text {
+  margin-right: 40px;
+  margin-left: 100px;
+  font-size: 16px;
+}
+.divider {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+.css-1okebmr-indicatorSeparator {
+  background-color: unset !important;
+}
+.content {
+  padding: 0 15px 10px 15px;
+  margin-top: 0px !important;
+}
+.card-footer {
+  background-color: unset !important;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.f-700 {
+  font-weight: 700;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.dark-text {
+  color: #c41e21 !important;
+}
+.spacing {
+  letter-spacing: 0.7px;
+}
+.auth-background {
+  background-image: url("../images/auth.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.authmargin {
+  margin-top: 2.15rem;
+}
+//css for diplomat details page
+.Hide {
+  visibility: hidden;
+}
+.Header-height {
+  height: 115px;
+  overflow: hidden;
+}
+.diplomat-details-height {
+  height: 800px;
+  // background-color:red;
+}
+.diplomat-image {
+  height: 80px;
+  width: 80px;
+  // border-radius: 50%;
+}
+.left-card-height {
+  height: 1245px;
+}
+.diplomat-details-btn {
+  background-color: whitesmoke;
+  border-radius: 50%;
+  border-color: antiquewhite;
+}
+.bottomCard-btn {
+  background-color: #00aeef;
+  margin-left: 32px;
+  height: 30px;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.bottomCard-btn1 {
+  background-color: #4955f0;
+  margin-left: 32px;
+  height: 30px;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.cardnumber {
+  margin-top: -10px;
+}
+.imgResponsive {
+  width: 100% !important;
+  height: auto !important;
+}
+.documentCard {
+  padding: 10px;
+  border: 1px solid #707070;
+  border-radius: 3px;
+  background: #fafafa;
+  & > img {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11) 0 2px 2px rgba(0, 0, 0, 0.11) 0
+      4px 4px rgba(0, 0, 0, 0.11) 0 6px 8px rgba(0, 0, 0, 0.11) 0 8px 16px
+      rgba(0, 0, 0, 0.11) !important;
+  }
+}
+.documentView {
+  padding: 10px;
+  border-radius: 3px;
+  background: #fafafa;
+  & > img {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11) 0 2px 2px rgba(0, 0, 0, 0.11) 0
+      4px 4px rgba(0, 0, 0, 0.11) 0 6px 8px rgba(0, 0, 0, 0.11) 0 8px 16px
+      rgba(0, 0, 0, 0.11) !important;
+  }
+}
+/*-------------------for mobile css-----------------------------------------*/
+@media (max-width: 767px) {
+  .row-footer {
+    flex-wrap: wrap !important;
+  }
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+  .subfooter {
+    padding: 20px;
+    font-size: 8px;
+  }
+  .footer-link {
+    width: inherit !important;
+    font-size: 10px;
+  }
+  .left-text,
+  .right-text {
+    font-size: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .font-small {
+    font-size: 14px;
+  }
+  //for making responsive diplomat-details page
+  .Header-height {
+    height: 120px;
+    overflow: hidden;
+  }
+  .left-card-height {
+    height: 860px;
+  }
+}

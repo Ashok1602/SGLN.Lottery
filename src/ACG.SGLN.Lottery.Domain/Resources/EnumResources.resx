@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrationType_Administration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="AdministrationType_Sales" xml:space="preserve">
+    <value>Commerciales</value>
+  </data>
+  <data name="AdministrationType_Technical" xml:space="preserve">
+    <value>Techniques</value>
+  </data>
+  <data name="DocumentFormat_Excel" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="DocumentFormat_None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="DocumentFormat_Pdf" xml:space="preserve">
+    <value>Pdf</value>
+  </data>
+  <data name="DocumentSpec_AutoGenerated" xml:space="preserve">
+    <value>Généré automatiquement</value>
+  </data>
+  <data name="DocumentSpec_None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="DocumentSpec_PaperWork" xml:space="preserve">
+    <value>Formalités administratives</value>
+  </data>
+  <data name="DocumentType_AnnouncementContent" xml:space="preserve">
+    <value>Contenu de l'annonce</value>
+  </data>
+  <data name="DocumentType_AnnouncementCoverPicture" xml:space="preserve">
+    <value>Photo de couverture d'annonce</value>
+  </data>
+  <data name="DocumentType_MediaLibraryDocument" xml:space="preserve">
+    <value>Librairie médiatique</value>
+  </data>
+  <data name="DocumentType_OfficialDocument" xml:space="preserve">
+    <value>Document officiel</value>
+  </data>
+  <data name="DocumentType_OfficialRessource" xml:space="preserve">
+    <value>Ressource officielle</value>
+  </data>
+  <data name="DocumentType_RequestAudioDocument" xml:space="preserve">
+    <value>Demande d'un document audio</value>
+  </data>
+  <data name="DocumentType_RequestCategoryCoverPicture" xml:space="preserve">
+    <value>Demande photo de couverture de la catégorie</value>
+  </data>
+  <data name="DocumentType_RequestImageDocument" xml:space="preserve">
+    <value>Demande d'un document image</value>
+  </data>
+  <data name="DocumentType_RequestNatureCoverPicture" xml:space="preserve">
+    <value>Demande photo de couverture de la nature</value>
+  </data>
+  <data name="DocumentType_RequestPdfDocument" xml:space="preserve">
+    <value>Demande d'un document PDF</value>
+  </data>
+  <data name="DocumentType_ToolboxDocument" xml:space="preserve">
+    <value>Document de la boite à outils</value>
+  </data>
+  <data name="DocumentType_TrainingCertificate" xml:space="preserve">
+    <value>Certificat de formation</value>
+  </data>
+  <data name="DocumentType_TrainingCourseSlide" xml:space="preserve">
+    <value>Diapositive du cours de formation</value>
+  </data>
+  <data name="DocumentType_TrainingCoverPicture" xml:space="preserve">
+    <value>Photo de couverture de formation</value>
+  </data>
+  <data name="DocumentType_TrainingSupportFile" xml:space="preserve">
+    <value>Fichier de support de formation</value>
+  </data>
+  <data name="InvoiceStatusType_Paid" xml:space="preserve">
+    <value>Payée</value>
+  </data>
+  <data name="InvoiceStatusType_Unpaid" xml:space="preserve">
+    <value>Impayée</value>
+  </data>
+  <data name="NotificationType_Alert" xml:space="preserve">
+    <value>Alerte</value>
+  </data>
+  <data name="NotificationType_Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="ProcessingDirectionType_DCO" xml:space="preserve">
+    <value>Direction Commerciale et Opérations</value>
+  </data>
+  <data name="ProcessingDirectionType_DCPRM" xml:space="preserve">
+    <value>Direction Contrôle Permanent et Risk Management</value>
+  </data>
+  <data name="ProcessingDirectionType_DFS" xml:space="preserve">
+    <value>Direction Finances et Support</value>
+  </data>
+  <data name="ProcessingDirectionType_DMD" xml:space="preserve">
+    <value>Direction Marketing et Développement</value>
+  </data>
+  <data name="RequestAffectationType_ExternalAgent" xml:space="preserve">
+    <value>Agent externe</value>
+  </data>
+  <data name="RequestAffectationType_InternalAgent" xml:space="preserve">
+    <value>Agent interne</value>
+  </data>
+  <data name="RequestAffectationType_None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="RequestCategoryType_EquipementChanging" xml:space="preserve">
+    <value>Changement équipement</value>
+  </data>
+  <data name="RequestCategoryType_EquipementRepairing" xml:space="preserve">
+    <value>Réparer un équipement</value>
+  </data>
+  <data name="RequestCategoryType_EquipementRequesting" xml:space="preserve">
+    <value>Demander un équipement</value>
+  </data>
+  <data name="RequestCategoryType_PersonalInformationChanging" xml:space="preserve">
+    <value>Changer vos données personnelles</value>
+  </data>
+  <data name="RequestCategoryType_UpdateMonthlyGoal" xml:space="preserve">
+    <value>Mise à jour de l'objectif mensuel</value>
+  </data>
+  <data name="RequestCategoryType_UpdateWeeklyGoal" xml:space="preserve">
+    <value>Mise à jour de l'objectif hebdomadaire</value>
+  </data>
+  <data name="RequestCategoryType_UpdateYearlyGoal" xml:space="preserve">
+    <value>Mise à jour de l'objectif annuel</value>
+  </data>
+  <data name="RequestNatureType_Administration" xml:space="preserve">
+    <value>Administrative et financière</value>
+  </data>
+  <data name="RequestNatureType_Sales" xml:space="preserve">
+    <value>Commerciales et Marketing</value>
+  </data>
+  <data name="RequestNatureType_Technical" xml:space="preserve">
+    <value>Techniques et Opérations</value>
+  </data>
+  <data name="RequestObjectType_Administration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="RequestOrigin_BO" xml:space="preserve">
+    <value>Back-Office</value>
+  </data>
+  <data name="RequestOrigin_FO" xml:space="preserve">
+    <value>Front-Office</value>
+  </data>
+  <data name="RequestStatusType_Cancelled" xml:space="preserve">
+    <value>Annulée</value>
+  </data>
+  <data name="RequestStatusType_Closed" xml:space="preserve">
+    <value>Clôturée</value>
+  </data>
+  <data name="RequestStatusType_Contested" xml:space="preserve">
+    <value>Contestée</value>
+  </data>
+  <data name="RequestStatusType_InProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="RequestStatusType_Submitted" xml:space="preserve">
+    <value>Envoyée</value>
+  </data>
+  <data name="SortDirection_Ascending" xml:space="preserve">
+    <value>Ascendant</value>
+  </data>
+  <data name="SortDirection_Descending" xml:space="preserve">
+    <value>Descendant</value>
+  </data>
+  <data name="TrainingStatusType_CourseFinished" xml:space="preserve">
+    <value>Cours terminé</value>
+  </data>
+  <data name="TrainingStatusType_InProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="TrainingStatusType_TestCompleted" xml:space="preserve">
+    <value>Test terminé</value>
+  </data>
+  <data name="TrainingType_Interactive" xml:space="preserve">
+    <value>Interactif</value>
+  </data>
+  <data name="TrainingType_Live" xml:space="preserve">
+    <value>En direct</value>
+  </data>
+  <data name="TrainingType_Video" xml:space="preserve">
+    <value>Vidéo</value>
+  </data>
+</root>

@@ -1,0 +1,93 @@
+﻿@using ACG.SGLN.Lottery.Application.Reporting.Queries
+@model PdfViewModel<List<IncentivesReportDto>>
+@{
+
+}
+
+<style type="text/css">
+    tr, th, td {
+        white-space: nowrap;
+        word-wrap: break-word;
+        text-align: center;
+        font-size: 6px;
+        word-break: break-all;
+    }
+
+    .pdf-report, .pdf-report tr, .pdf-report th {
+        border: 1px solid #222;
+    }
+    .pdf-label {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .pdf-value {
+        font-style: normal;
+    }
+
+    .pdf-section-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 15px 0px 5px 0px;
+    }
+
+    .pdf-report {
+        width: 100%;
+    }
+
+    .pdf-report th {
+        color: white;
+        background-color: rgb(0, 109, 49);
+    }
+
+    .report-header .report-footer {
+        visibility: hidden !important;
+    }
+</style>
+
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" style="text-align:center; font-weight:bolder;font-size:14px;">Rapport des réalisations des incentives</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table class="pdf-report">
+                    <thead>
+                        <tr>
+                            <th>N &deg;</th>
+                            <th>Nom campagne</th>
+                            <th>Date début</th>
+                            <th>Date fin</th>
+                            <th>Objectif</th>
+                            <th>Réalisé</th>
+                            <th>Pourcentage de réalisation</th>
+                            <th>Reste à réaliser</th>
+                            <th>Bonus</th>
+                        </tr>
+                    </thead>
+                    @{int i = 1;}
+                    @foreach (var saleDetails in Model.Data)
+                    {
+                <tr>
+                    <td>@i</td>
+                    @{i++;}
+                    <td>@saleDetails.CompanyIdentifier</td>
+                    <td>@saleDetails.StartDate</td>
+                    <td>@saleDetails.EndDate</td>
+                    <td>@saleDetails.Goal</td>
+                    <td>@saleDetails.Achievement</td>
+                    <td>@saleDetails.AchievementRate %</td>
+                    <td>@saleDetails.Remains</td>
+                    <td>@saleDetails.Bonus</td>
+                </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold" colspan="3">TOTAL @(i-1)</td>
+        </tr>
+    </tbody>
+</table>

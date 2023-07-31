@@ -1,0 +1,18 @@
+﻿@using ACG.SGLN.Lottery.Application.Users;
+@model TemplateViewModel<UserCreateDto>
+@{
+}
+
+<p>
+    Bonjour @Model.Data.FirstName @Model.Data.LastName,<br />
+
+    Votre inscription a bien été enregistrée.<br />
+
+    Afin d'accéder à votre compte :<br />
+    - Nom d'utilisateur : <strong>@Model.Data.UserName</strong> <br />
+    - Mot de passe : <strong>@Model.Data.Password</strong><br />
+
+    Salutations,<br />
+
+    Equipe SGLN.<br />
+</p>

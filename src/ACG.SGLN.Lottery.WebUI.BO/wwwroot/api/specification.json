@@ -1,0 +1,7601 @@
+﻿{
+  "x-generator": "NSwag v13.3.0.0 (NJsonSchema v10.1.11.0 (Newtonsoft.Json v12.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ACG.SGLN.Lottery API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/announcements": {
+      "post": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "Create new request",
+        "operationId": "Announcements_Create",
+        "parameters": [
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Body",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "type": "file",
+            "name": "CoverImage",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created request object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Request"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "Get Announcements list",
+        "operationId": "Announcements_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "MinCreationDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "MaxCreationDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "Title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "IsPublished",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 6
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfAnnouncement"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/announcements/{id}": {
+      "get": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "Get Announcement by id",
+        "operationId": "Announcements_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Announcement"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "Delete Announcement by id",
+        "operationId": "Announcements_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/announcements/{id}/publish": {
+      "post": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "Publish Announcement ",
+        "operationId": "Announcements_Publish",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/announcements/{id}/unpublish": {
+      "post": {
+        "tags": [
+          "Announcements"
+        ],
+        "summary": "UnPublish Announcement ",
+        "operationId": "Announcements_Unpublish",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/auth/signin": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Sign In Command",
+        "operationId": "Auth_SignIn",
+        "requestBody": {
+          "x-name": "userSignInData",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserSignInDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout Command",
+        "operationId": "Auth_LogOut",
+        "requestBody": {
+          "x-name": "deviceToken",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/cities": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "List all cities",
+        "operationId": "Cities_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cities"
+        ],
+        "operationId": "Cities_Create",
+        "requestBody": {
+          "x-name": "entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/City"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/cities/all": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "List all cities",
+        "operationId": "Cities_GetAll",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfInteger"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cities/{id}": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "operationId": "Cities_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Cities"
+        ],
+        "operationId": "Cities_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/City"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Cities"
+        ],
+        "operationId": "Cities_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/dataintegration/retailers": {
+      "post": {
+        "tags": [
+          "DataIntegration"
+        ],
+        "summary": "Add new Retailers and create a user account for them",
+        "operationId": "DataIntegration_CreateRetailers",
+        "requestBody": {
+          "x-name": "data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RetailerDto"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "DataIntegration"
+        ],
+        "summary": "Update Retailers",
+        "operationId": "DataIntegration_UpdateRetailers",
+        "requestBody": {
+          "x-name": "data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RetailerUpdateDto"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/dataintegration/retailer": {
+      "post": {
+        "tags": [
+          "DataIntegration"
+        ],
+        "summary": "Add a new Retailer and create a user account for him",
+        "operationId": "DataIntegration_CreateRetailer",
+        "requestBody": {
+          "x-name": "data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetailerDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Retailer"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/dataintegration/retailer/{externalRetailerCode}": {
+      "put": {
+        "tags": [
+          "DataIntegration"
+        ],
+        "summary": "Update a Retailer",
+        "operationId": "DataIntegration_UpdateRetailer",
+        "parameters": [
+          {
+            "name": "externalRetailerCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetailerUpdateDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Retailer"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/documents/upload": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Upload a document",
+        "operationId": "Documents_Upload",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentType"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Spec",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentSpec"
+            },
+            "x-position": 3
+          },
+          {
+            "type": "file",
+            "name": "File",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/download/{type}/{id}": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Download a document",
+        "operationId": "Documents_Download",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DocumentType"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "isThumbnail",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/download/requestnature/{type}": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Download static documents by Value",
+        "operationId": "Documents_DownloadRequestNatureImage",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/RequestNatureType"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/{type}/{id}": {
+      "delete": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Delete a document",
+        "operationId": "Documents_Delete",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DocumentType"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/excellenceprograms/incentives": {
+      "get": {
+        "tags": [
+          "ExcellencePrograms"
+        ],
+        "summary": "Get Incentives",
+        "operationId": "ExcellencePrograms_GetIncentives",
+        "parameters": [
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "MinGoal",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 3
+          },
+          {
+            "name": "MaxGoal",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 4
+          },
+          {
+            "name": "MinAchievement",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 5
+          },
+          {
+            "name": "MaxAchievement",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 6
+          },
+          {
+            "name": "RetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 7
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncentiveDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "List all Notifications",
+        "operationId": "Notifications_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/NotificationType"
+                }
+              ]
+            },
+            "x-position": 3
+          },
+          {
+            "name": "Title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "Body",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "TargetRetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 7
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 8
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfNotification"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Creates a Notification",
+        "operationId": "Notifications_Create",
+        "requestBody": {
+          "x-name": "notificationDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/notifications/{id}": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get Notification by id",
+        "operationId": "Notifications_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/notifications/stripped": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "All Alerts",
+        "operationId": "Notifications_GetStrippedNotifications",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reporting/trainingsbymodule": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Trainings By Module report ",
+        "operationId": "Reporting_GenerateTrainingsByModuleReport",
+        "parameters": [
+          {
+            "name": "ModuleId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Training",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/trainingsbyretailer": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Trainings By Retailer report ",
+        "operationId": "Reporting_GenerateTrainingsByRetailerReport",
+        "parameters": [
+          {
+            "name": "RetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "InternalRetailerCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/incentives": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Incentives report ",
+        "operationId": "Reporting_GenerateIncentivesReport",
+        "parameters": [
+          {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GameType"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 4
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/ratiorequests": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Ratio Requests Report",
+        "operationId": "Reporting_GenerateRatioRequestsReport",
+        "parameters": [
+          {
+            "name": "RetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Nature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestObjectId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/RequestStatusType"
+            },
+            "x-position": 5
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 7
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 8
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/requests": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Requests report ",
+        "operationId": "Reporting_GenerateRequestsReport",
+        "parameters": [
+          {
+            "name": "RetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Nature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestObjectId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestStatusType"
+                }
+              ]
+            },
+            "x-position": 5
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 7
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 8
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/processingtimerequests": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Generate Processing Time Requests report ",
+        "operationId": "Reporting_GenerateProcessingTimeRequestsReport",
+        "parameters": [
+          {
+            "name": "RetailerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Nature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestObjectId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "documentFormat",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DocumentFormat"
+            },
+            "x-position": 7
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/reporting/retailers": {
+      "get": {
+        "tags": [
+          "Reporting"
+        ],
+        "summary": "Get Retailers Report",
+        "operationId": "Reporting_GetRetailerReport",
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetailersReportDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcategories": {
+      "post": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "Create a RequestCategory",
+        "operationId": "RequestCategories_Create",
+        "parameters": [
+          {
+            "name": "RequestNature",
+            "in": "formData",
+            "schema": {
+              "$ref": "#/components/schemas/RequestNatureType"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "type": "file",
+            "name": "CoverImage",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "List all RequestCategorys",
+        "operationId": "RequestCategories_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestNature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 4
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfRequestCategory"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "Update a RequestCategory",
+        "operationId": "RequestCategories_Update",
+        "parameters": [
+          {
+            "name": "RequestNature",
+            "in": "formData",
+            "schema": {
+              "$ref": "#/components/schemas/RequestNatureType"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "type": "file",
+            "name": "CoverImage",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcategories/{id}": {
+      "delete": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "Delete a RequestCategory",
+        "operationId": "RequestCategories_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcategories/{id}/activate": {
+      "post": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "Activates a RequestCategory",
+        "operationId": "RequestCategories_Activate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcategories/{id}/deactivate": {
+      "post": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "Deactivate a RequestCategory",
+        "operationId": "RequestCategories_Deactivate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcategories/stripped": {
+      "get": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "List all RequestObjects",
+        "operationId": "RequestCategories_GetStripped",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/requestcategories/{requestNature}/stripped": {
+      "get": {
+        "tags": [
+          "RequestCategories"
+        ],
+        "summary": "List all RequestObjects",
+        "operationId": "RequestCategories_GetStrippedByNature",
+        "parameters": [
+          {
+            "name": "requestNature",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/RequestNatureType"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/requestcomments": {
+      "post": {
+        "tags": [
+          "RequestComments"
+        ],
+        "summary": "Create a RequestComment",
+        "operationId": "RequestComments_Create",
+        "requestBody": {
+          "x-name": "entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestCommentDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestComment"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestcomments/{id}": {
+      "delete": {
+        "tags": [
+          "RequestComments"
+        ],
+        "summary": "Delete a RequestComment",
+        "operationId": "RequestComments_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestobjects": {
+      "post": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "Create a RequestObject",
+        "operationId": "RequestObjects_Create",
+        "parameters": [
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "IsExternal",
+            "in": "formData",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 3
+          },
+          {
+            "type": "file",
+            "name": "CoverImage",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          {
+            "name": "ProcessingDirection",
+            "in": "formData",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProcessingDirectionType"
+                }
+              ]
+            },
+            "x-position": 4
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "List all RequestObjects",
+        "operationId": "RequestObjects_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "RequestNature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfRequestObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/requestobjects/{requestCategoryId}/stripped": {
+      "get": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "List all RequestObjects",
+        "operationId": "RequestObjects_GetStrippedByCategory",
+        "parameters": [
+          {
+            "name": "requestCategoryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/requestobjects/{id}": {
+      "put": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "Update a RequestObject",
+        "operationId": "RequestObjects_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "IsExternal",
+            "in": "formData",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 4
+          },
+          {
+            "type": "file",
+            "name": "CoverImage",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          {
+            "name": "ProcessingDirection",
+            "in": "formData",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProcessingDirectionType"
+                }
+              ]
+            },
+            "x-position": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "Delete a RequestObject",
+        "operationId": "RequestObjects_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestobjects/{id}/activate": {
+      "post": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "Activates a RequestObject",
+        "operationId": "RequestObjects_Activate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requestobjects/{id}/deactivate": {
+      "post": {
+        "tags": [
+          "RequestObjects"
+        ],
+        "summary": "Deactivate a RequestObject",
+        "operationId": "RequestObjects_Deactivate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests": {
+      "get": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Get Requests list",
+        "operationId": "Requests_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RequestObject",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "RequestCategoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "RequestNature",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestNatureType"
+                }
+              ]
+            },
+            "x-position": 5
+          },
+          {
+            "name": "ProcessingDirection",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProcessingDirectionType"
+                }
+              ]
+            },
+            "x-position": 6
+          },
+          {
+            "name": "LastStatus",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/RequestStatusType"
+                }
+              ]
+            },
+            "x-position": 7
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 8
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 9
+          },
+          {
+            "name": "Retailer",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 10
+          },
+          {
+            "name": "RequestAssignedTo",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/RequestAffectationType"
+                  }
+                ]
+              }
+            },
+            "x-position": 11
+          },
+          {
+            "name": "FirstName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 12
+          },
+          {
+            "name": "LastName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 13
+          },
+          {
+            "name": "Phone",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 14
+          },
+          {
+            "name": "IsNotified",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 15
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfRequest"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests/{id}": {
+      "get": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Get Request by id",
+        "operationId": "Requests_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Request"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests/{id}/assign": {
+      "post": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "assing request ",
+        "operationId": "Requests_Assign",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "isExternal",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "processingDirection",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProcessingDirectionType"
+                }
+              ]
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests/mailtest": {
+      "post": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Test",
+        "operationId": "Requests_TestMail",
+        "requestBody": {
+          "x-name": "emails",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/requests/{Id}/comments": {
+      "get": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "RequestComment by Id",
+        "operationId": "Requests_GetCommentsById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RequestComment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests/{id}/start": {
+      "post": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "start request ",
+        "operationId": "Requests_Start",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/requests/{id}/close": {
+      "post": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "close request ",
+        "operationId": "Requests_Close",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "closingDetail",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CloseRequestDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers": {
+      "get": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Get retailers list",
+        "operationId": "Retailers_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "FirstName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "LastName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "Phone",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "IsNotified",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 6
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfRetailer"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/fromfile": {
+      "post": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Get Retailers From excel file",
+        "operationId": "Retailers_GetFromFile",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/retailers/{id}": {
+      "get": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Get Retailer by id",
+        "operationId": "Retailers_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRetailerDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/{id}/agent": {
+      "get": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Get Retailer Agent ",
+        "operationId": "Retailers_GetAgent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Sets Retailer Agent ",
+        "operationId": "Retailers_AssignAgent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "agentId",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/{id}/salesrepresentative": {
+      "post": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Sets Retailer Sales Representative ",
+        "operationId": "Retailers_AssignSalesRepresentative",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "salesRepresentativedto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesRepresentativeDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/mass/salesrepresentative": {
+      "post": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "Sets mass Retailer Sales Representative ",
+        "operationId": "Retailers_MassAssignSalesRepresentative",
+        "requestBody": {
+          "x-name": "salesRepresentativedto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesRepresentativeDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/stripped": {
+      "get": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "List Stripped Retailers",
+        "operationId": "Retailers_GetStrippedRetailers",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/retailers/municipalities": {
+      "get": {
+        "tags": [
+          "Retailers"
+        ],
+        "summary": "List Municipalities",
+        "operationId": "Retailers_GetMunicipalities",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/roles": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Get roles",
+        "operationId": "Roles_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RoleDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/supportdocuments": {
+      "get": {
+        "tags": [
+          "SupportDocuments"
+        ],
+        "summary": "Get ApplicationDocuments list",
+        "operationId": "SupportDocuments_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/DocumentType"
+                }
+              ]
+            },
+            "x-position": 4
+          },
+          {
+            "name": "MinCreationDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "MaxCreationDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 6
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfApplicationDocument"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainingmodules": {
+      "post": {
+        "tags": [
+          "TrainingModules"
+        ],
+        "summary": "Create a TrainingModule",
+        "operationId": "TrainingModules_Create",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "TrainingModules"
+        ],
+        "summary": "List all TrainingModules",
+        "operationId": "TrainingModules_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrainingModuleDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainingmodules/stripped": {
+      "get": {
+        "tags": [
+          "TrainingModules"
+        ],
+        "summary": "List stripped TrainingModules",
+        "operationId": "TrainingModules_GetStripped",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdValueDtoOfGuid"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainingmodules/{id}": {
+      "get": {
+        "tags": [
+          "TrainingModules"
+        ],
+        "summary": "List TrainingModule by id",
+        "operationId": "TrainingModules_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingModule"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TrainingModules"
+        ],
+        "summary": "Delete a TrainingModule",
+        "operationId": "TrainingModules_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings": {
+      "get": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get Trainings list",
+        "operationId": "Trainings_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "TrainingType",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/TrainingType"
+                }
+              ]
+            },
+            "x-position": 5
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "ModuleId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid",
+              "nullable": true
+            },
+            "x-position": 7
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfTraining"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/{id}": {
+      "get": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get Training by id",
+        "operationId": "Trainings_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/{id}/questions": {
+      "get": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get Training by id",
+        "operationId": "Trainings_GetTrainingQuestionsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrainingQuestion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/{id}/slides": {
+      "get": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get Training slides by id",
+        "operationId": "Trainings_GetTrainingSlidesById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InteractiveTrainingDocumentVm"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/live": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Create live training",
+        "operationId": "Trainings_CreateLiveTraining",
+        "parameters": [
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "CourseURI",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "StartDate",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "EndDate",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "type": "file",
+            "name": "SupportDocument",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/live/{id}": {
+      "put": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Edit live training",
+        "operationId": "Trainings_EditLiveTraining",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Title",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "CourseURI",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "StartDate",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "EndDate",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "type": "file",
+            "name": "SupportDocument",
+            "in": "formData",
+            "schema": {
+              "type": "string",
+              "format": "binary",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/interactive/{id}": {
+      "put": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Edit Interactive training",
+        "operationId": "Trainings_EditInteractiveTraining",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "interactiveTrainingDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InteractiveTrainingDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/video": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Create video training",
+        "operationId": "Trainings_CreateVideoTraining",
+        "requestBody": {
+          "x-name": "videoTrainingDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VideoTrainingDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/video/{id}": {
+      "put": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Edit video training",
+        "operationId": "Trainings_EditVideoTraining",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "videoTrainingDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VideoTrainingDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/interactive": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Create interactive training",
+        "operationId": "Trainings_CreateInteractiveTraining",
+        "requestBody": {
+          "x-name": "interactiveTrainingDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InteractiveTrainingDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/{id}/publish": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Publish Training ",
+        "operationId": "Trainings_Publish",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/trainings/{id}/unpublish": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "UnPublish Training ",
+        "operationId": "Trainings_Unpublish",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get users list",
+        "operationId": "Users_Get",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "UserName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "Email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "FirstName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "LastName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "RoleId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 7
+          },
+          {
+            "name": "IsDeactivated",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 8
+          },
+          {
+            "name": "Roles",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-position": 9
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResultOfUser"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create user",
+        "operationId": "Users_CreateUser",
+        "requestBody": {
+          "x-name": "userDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get user by id",
+        "operationId": "Users_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Delete user",
+        "operationId": "Users_DeleteUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update user details ",
+        "operationId": "Users_UpdateUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "userUpdateDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdateDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/roles": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Users by role ",
+        "operationId": "Users_GetByRoles",
+        "parameters": [
+          {
+            "name": "rolenames",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "description": "User RoleName",
+            "schema": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/current": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get logged in user",
+        "operationId": "Users_GetConnectedUser",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/password/change": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Changes usr passuser",
+        "operationId": "Users_ChangePassword",
+        "requestBody": {
+          "x-name": "changePasswordData",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordData"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/{userId}/{roleName}": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update user role",
+        "operationId": "Users_UpdateUserRole",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "roleName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/{id}/validate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Validates a retailer account",
+        "operationId": "Users_ValidateRetailer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/{id}/activate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Activates a User",
+        "operationId": "Users_Activate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/{id}/deactivate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Deactivate a User",
+        "operationId": "Users_Deactivate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/users/forgotpassword": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Init ForgotPassword",
+        "operationId": "Users_ForgotPassword",
+        "requestBody": {
+          "x-name": "email",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/resetpassword": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Reset Password",
+        "operationId": "Users_ResetPassword",
+        "requestBody": {
+          "x-name": "resetDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserResetDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/resources": {
+      "get": {
+        "tags": [
+          "Resources"
+        ],
+        "operationId": "Resources_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Request": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reference": {
+                "type": "string",
+                "nullable": true
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "requestObject": {
+                "type": "string",
+                "nullable": true
+              },
+              "requestCategoryId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "requestCategory": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/RequestCategory"
+                  }
+                ]
+              },
+              "requestNature": {
+                "$ref": "#/components/schemas/RequestNatureType"
+              },
+              "processingDirection": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProcessingDirectionType"
+                  }
+                ]
+              },
+              "lastStatus": {
+                "$ref": "#/components/schemas/RequestStatusType"
+              },
+              "requestAssignedTo": {
+                "$ref": "#/components/schemas/RequestAffectationType"
+              },
+              "closingRetailerMessage": {
+                "type": "string",
+                "nullable": true
+              },
+              "closingDescriptionMessage": {
+                "type": "string",
+                "nullable": true
+              },
+              "retailer": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                ]
+              },
+              "retailerId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "documents": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestDocument"
+                }
+              },
+              "comments": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestComment"
+                }
+              },
+              "statuses": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestStatus"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RequestCategory": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "requestObjects": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestObject"
+                }
+              },
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "isDeactivated": {
+                "type": "boolean"
+              },
+              "requestNature": {
+                "$ref": "#/components/schemas/RequestNatureType"
+              }
+            }
+          }
+        ]
+      },
+      "RequestObject": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "isExternal": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "isDeactivated": {
+                "type": "boolean"
+              },
+              "requestCategory": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/RequestCategory"
+                  }
+                ]
+              },
+              "requestCategoryId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "processingDirection": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProcessingDirectionType"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "ProcessingDirectionType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "DCO",
+          "DMD",
+          "DFS",
+          "DCPRM"
+        ],
+        "enum": [
+          "DCO",
+          "DMD",
+          "DFS",
+          "DCPRM"
+        ]
+      },
+      "AbstractDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "uri": {
+                "type": "string",
+                "nullable": true
+              },
+              "data": {
+                "type": "string",
+                "format": "byte",
+                "nullable": true
+              },
+              "mimeType": {
+                "type": "string",
+                "nullable": true
+              },
+              "isGenerated": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "type": {
+                "$ref": "#/components/schemas/DocumentType"
+              },
+              "spec": {
+                "$ref": "#/components/schemas/DocumentSpec"
+              },
+              "comment": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "DocumentType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "TrainingCourseSlide",
+          "TrainingSupportFile",
+          "TrainingCoverPicture",
+          "AnnouncementCoverPicture",
+          "OfficialDocument",
+          "OfficialRessource",
+          "RequestAudioDocument",
+          "RequestPdfDocument",
+          "RequestImageDocument",
+          "RequestObjectCoverPicture",
+          "RequestCategoryCoverPicture",
+          "RequestNatureCoverPicture",
+          "TrainingCertificate",
+          "MediaLibraryDocument",
+          "ToolboxDocument"
+        ],
+        "enum": [
+          "TrainingCourseSlide",
+          "TrainingSupportFile",
+          "TrainingCoverPicture",
+          "AnnouncementCoverPicture",
+          "OfficialDocument",
+          "OfficialRessource",
+          "RequestAudioDocument",
+          "RequestPdfDocument",
+          "RequestImageDocument",
+          "RequestObjectCoverPicture",
+          "RequestCategoryCoverPicture",
+          "RequestNatureCoverPicture",
+          "TrainingCertificate",
+          "MediaLibraryDocument",
+          "ToolboxDocument"
+        ]
+      },
+      "DocumentSpec": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "None",
+          "AutoGenerated",
+          "PaperWork"
+        ],
+        "enum": [
+          "None",
+          "AutoGenerated",
+          "PaperWork"
+        ]
+      },
+      "BaseEntityOfGuid": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IdBasedEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastModified": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "createdBy": {
+                "type": "string",
+                "nullable": true
+              },
+              "lastModifiedBy": {
+                "type": "string",
+                "nullable": true
+              },
+              "isDeleted": {
+                "type": "boolean",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "IdBasedEntityOfGuid": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "RequestNatureType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Technical",
+          "Administration",
+          "Sales"
+        ],
+        "enum": [
+          "Technical",
+          "Administration",
+          "Sales"
+        ]
+      },
+      "RequestStatusType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Submitted",
+          "InProgress",
+          "Closed",
+          "Contested",
+          "Cancelled"
+        ],
+        "enum": [
+          "Submitted",
+          "InProgress",
+          "Closed",
+          "Contested",
+          "Cancelled"
+        ]
+      },
+      "RequestAffectationType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "ExternalAgent",
+          "InternalAgent",
+          "None"
+        ],
+        "enum": [
+          "ExternalAgent",
+          "InternalAgent",
+          "None"
+        ]
+      },
+      "Retailer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ContactBasedEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "civility": {
+                "type": "string",
+                "nullable": true
+              },
+              "firstName": {
+                "type": "string",
+                "nullable": true
+              },
+              "lastName": {
+                "type": "string",
+                "nullable": true
+              },
+              "userId": {
+                "type": "string",
+                "nullable": true
+              },
+              "agentId": {
+                "type": "string",
+                "nullable": true
+              },
+              "internalRetailerCode": {
+                "type": "string",
+                "nullable": true
+              },
+              "externalRetailerCode": {
+                "type": "string",
+                "nullable": true
+              },
+              "currentBalance": {
+                "type": "number",
+                "format": "double"
+              },
+              "weeklySalesLimit": {
+                "type": "number",
+                "format": "double"
+              },
+              "annualCA": {
+                "type": "number",
+                "format": "double"
+              },
+              "totalCommissions": {
+                "type": "number",
+                "format": "double"
+              },
+              "totalUnpaid": {
+                "type": "number",
+                "format": "double"
+              },
+              "contractNumber": {
+                "type": "string",
+                "nullable": true
+              },
+              "companyIdentifier": {
+                "type": "string",
+                "nullable": true
+              },
+              "activity": {
+                "type": "string",
+                "nullable": true
+              },
+              "geographicSector": {
+                "type": "string",
+                "nullable": true
+              },
+              "adressLatitude": {
+                "type": "number",
+                "format": "double"
+              },
+              "adressLongitude": {
+                "type": "number",
+                "format": "double"
+              },
+              "isNotified": {
+                "type": "boolean"
+              },
+              "tradeRegister": {
+                "type": "string",
+                "nullable": true
+              },
+              "professionalTax": {
+                "type": "string",
+                "nullable": true
+              },
+              "gpsCoordinates": {
+                "type": "string",
+                "nullable": true
+              },
+              "commercialZone": {
+                "type": "string",
+                "nullable": true
+              },
+              "geoCodeHCP": {
+                "type": "string",
+                "nullable": true
+              },
+              "municipality": {
+                "type": "string",
+                "nullable": true
+              },
+              "administrativeRegion": {
+                "type": "string",
+                "nullable": true
+              },
+              "sglnCommercialName": {
+                "type": "string",
+                "nullable": true
+              },
+              "sglnCommercialPhone": {
+                "type": "string",
+                "nullable": true
+              },
+              "sglnCommercialMail": {
+                "type": "string",
+                "nullable": true
+              },
+              "taxIdentification": {
+                "type": "string",
+                "nullable": true
+              },
+              "sisalCommercialName": {
+                "type": "string",
+                "nullable": true
+              },
+              "sisalCommercialMail": {
+                "type": "string",
+                "nullable": true
+              },
+              "sisalCommercialPhone": {
+                "type": "string",
+                "nullable": true
+              },
+              "weeksNumber": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "classification": {
+                "type": "string",
+                "nullable": true
+              },
+              "loyalityPoints": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "isDeactivated": {
+                "type": "boolean"
+              },
+              "documents": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RetailerDocument"
+                }
+              },
+              "invoices": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Invoice"
+                }
+              },
+              "retailerNotifications": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RetailerNotification"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RetailerDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "retailer": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                ]
+              },
+              "retailerId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "title": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "Invoice": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reference": {
+                "type": "string",
+                "nullable": true
+              },
+              "status": {
+                "$ref": "#/components/schemas/InvoiceStatusType"
+              },
+              "date": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "amount": {
+                "type": "number",
+                "format": "double"
+              },
+              "retailer": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                ]
+              },
+              "retailerId": {
+                "type": "string",
+                "format": "guid"
+              }
+            }
+          }
+        ]
+      },
+      "InvoiceStatusType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Paid",
+          "Unpaid"
+        ],
+        "enum": [
+          "Paid",
+          "Unpaid"
+        ]
+      },
+      "RetailerNotification": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "retailer": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Retailer"
+              }
+            ]
+          },
+          "retailerId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "notification": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Notification"
+              }
+            ]
+          },
+          "notificationId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "Notification": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "body": {
+                "type": "string",
+                "nullable": true
+              },
+              "type": {
+                "$ref": "#/components/schemas/NotificationType"
+              },
+              "targetScreen": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/NotificationTargetType"
+                  }
+                ]
+              },
+              "targetId": {
+                "type": "string",
+                "format": "guid",
+                "nullable": true
+              },
+              "retailerNotifications": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RetailerNotification"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "NotificationType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Notification",
+          "Alert"
+        ],
+        "enum": [
+          "Notification",
+          "Alert"
+        ]
+      },
+      "NotificationTargetType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "RequestListScreen",
+          "CreateRequestScreen",
+          "NewsConsultationList",
+          "AnnoucementsDetails",
+          "TrainingAreaScreen",
+          "MediaLibraryDocumentScreen",
+          "ProfileScreen",
+          "DocumentsScreen"
+        ],
+        "enum": [
+          "RequestListScreen",
+          "CreateRequestScreen",
+          "NewsConsultationList",
+          "AnnoucementsDetails",
+          "TrainingAreaScreen",
+          "MediaLibraryDocumentScreen",
+          "ProfileScreen",
+          "DocumentsScreen"
+        ]
+      },
+      "ContactBasedEntity": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "city": {
+                "type": "string",
+                "nullable": true
+              },
+              "address": {
+                "type": "string",
+                "nullable": true
+              },
+              "addressLine2": {
+                "type": "string",
+                "nullable": true
+              },
+              "zip": {
+                "type": "string",
+                "nullable": true
+              },
+              "phone": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "RequestDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "request": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Request"
+                  }
+                ]
+              },
+              "requestId": {
+                "type": "string",
+                "format": "guid"
+              }
+            }
+          }
+        ]
+      },
+      "RequestComment": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractComment"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "request": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Request"
+                  }
+                ]
+              },
+              "requestId": {
+                "type": "string",
+                "format": "guid"
+              }
+            }
+          }
+        ]
+      },
+      "AbstractComment": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "body": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "RequestStatus": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "request": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Request"
+                  }
+                ]
+              },
+              "requestId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "statusType": {
+                "$ref": "#/components/schemas/RequestStatusType"
+              },
+              "comment": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "PagedResultOfAnnouncement": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Announcement"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Announcement": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "body": {
+                "type": "string",
+                "nullable": true
+              },
+              "isPublished": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "PagedResultBase": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstRowOnPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastRowOnPage": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Unit": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "AuthenticationResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "isLockedOut": {
+            "type": "boolean"
+          },
+          "isNotAllowed": {
+            "type": "boolean"
+          },
+          "accessToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "isTemporaryPassword": {
+            "type": "boolean"
+          },
+          "errors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UserSignInDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "userName",
+          "password"
+        ],
+        "properties": {
+          "userName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deviceToken": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "IdValueDtoOfInteger": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "City": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TitledData"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "TitledData": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfInteger"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "normalizedTitle": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "BaseEntityOfInteger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IdBasedEntityOfInteger"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastModified": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "createdBy": {
+                "type": "string",
+                "nullable": true
+              },
+              "lastModifiedBy": {
+                "type": "string",
+                "nullable": true
+              },
+              "isDeleted": {
+                "type": "boolean",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "IdBasedEntityOfInteger": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RetailerDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "civility": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "internalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "weeklySalesLimit": {
+            "type": "number",
+            "format": "double"
+          },
+          "annualCA": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCommissions": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalUnpaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "contractNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "activity": {
+            "type": "string",
+            "nullable": true
+          },
+          "geographicSector": {
+            "type": "string",
+            "nullable": true
+          },
+          "adressLatitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "adressLongitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "agentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "tradeRegister": {
+            "type": "string",
+            "nullable": true
+          },
+          "professionalTax": {
+            "type": "string",
+            "nullable": true
+          },
+          "gpsCoordinates": {
+            "type": "string",
+            "nullable": true
+          },
+          "commercialZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "geoCodeHCP": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipality": {
+            "type": "string",
+            "nullable": true
+          },
+          "administrativeRegion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RetailerUpdateDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "civility": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "internalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "weeklySalesLimit": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "annualCA": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalCommissions": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalUnpaid": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "contractNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "activity": {
+            "type": "string",
+            "nullable": true
+          },
+          "geographicSector": {
+            "type": "string",
+            "nullable": true
+          },
+          "adressLatitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "adressLongitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "agentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "tradeRegister": {
+            "type": "string",
+            "nullable": true
+          },
+          "professionalTax": {
+            "type": "string",
+            "nullable": true
+          },
+          "gpsCoordinates": {
+            "type": "string",
+            "nullable": true
+          },
+          "commercialZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "geoCodeHCP": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipality": {
+            "type": "string",
+            "nullable": true
+          },
+          "administrativeRegion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialMail": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialMail": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DocumentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "spec": {
+            "$ref": "#/components/schemas/DocumentSpec"
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "IncentiveDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GameType"
+          },
+          "startDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "goal": {
+            "type": "number",
+            "format": "double"
+          },
+          "achievement": {
+            "type": "number",
+            "format": "double"
+          },
+          "achievementRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "remains": {
+            "type": "number",
+            "format": "double"
+          },
+          "bonus": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "GameType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Loto",
+          "Joker",
+          "Keno",
+          "Quatro"
+        ],
+        "enum": [
+          "Loto",
+          "Joker",
+          "Keno",
+          "Quatro"
+        ]
+      },
+      "PagedResultOfNotification": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "IdValueDtoOfGuid": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "NotificationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/NotificationType"
+          },
+          "targetRetailerIds": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "guid"
+            }
+          },
+          "targetScreen": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/NotificationTargetType"
+              }
+            ]
+          },
+          "targetId": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          }
+        }
+      },
+      "DocumentFormat": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Pdf",
+          "Excel"
+        ],
+        "enum": [
+          "Pdf",
+          "Excel"
+        ]
+      },
+      "RetailersReportDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "countActiveRetailers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countRegisteredRetailers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ratioActiveRegistered": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "PagedResultOfRequestCategory": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestCategory"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RequestCommentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "PagedResultOfRequestObject": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RequestObject"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "PagedResultOfRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Request"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "CloseRequestDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "closingRetailerMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "closingDescriptionMessage": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PagedResultOfRetailer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Retailer"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "GetRetailerDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "civility": {
+            "type": "string",
+            "nullable": true
+          },
+          "userid": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "internalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalRetailerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "weeklySalesLimit": {
+            "type": "number",
+            "format": "double"
+          },
+          "annualCA": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCommissions": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalUnpaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "contractNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "activity": {
+            "type": "string",
+            "nullable": true
+          },
+          "geographicSector": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeactivated": {
+            "type": "boolean"
+          },
+          "isValidated": {
+            "type": "boolean"
+          },
+          "sglnCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialMail": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialMail": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isExternal": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isDeactivated": {
+            "type": "boolean"
+          },
+          "isValidated": {
+            "type": "boolean"
+          },
+          "administration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ProcessingDirectionType"
+              }
+            ]
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "permissions": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SalesRepresentativeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sglnCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialMail": {
+            "type": "string",
+            "nullable": true
+          },
+          "sglnCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialMail": {
+            "type": "string",
+            "nullable": true
+          },
+          "sisalCommercialPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "isMassAssignement": {
+            "type": "boolean"
+          },
+          "targetMunicipality": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RoleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PagedResultOfApplicationDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ApplicationDocument"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ApplicationDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "TrainingModuleDTO": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "countTrainings": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TrainingModule": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "trainings": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Training": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "module": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/TrainingModule"
+                  }
+                ]
+              },
+              "moduleId": {
+                "type": "string",
+                "format": "guid",
+                "nullable": true
+              },
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "type": {
+                "$ref": "#/components/schemas/TrainingType"
+              },
+              "courseURI": {
+                "type": "string",
+                "nullable": true
+              },
+              "questions": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/TrainingQuestion"
+                }
+              },
+              "documents": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/TrainingDocument"
+                }
+              },
+              "retailerTrainings": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RetailerTraining"
+                }
+              },
+              "isPublished": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "TrainingType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Interactive",
+          "Live",
+          "Video"
+        ],
+        "enum": [
+          "Interactive",
+          "Live",
+          "Video"
+        ]
+      },
+      "TrainingQuestion": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "nullable": true
+              },
+              "training": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Training"
+                  }
+                ]
+              },
+              "trainingId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "options": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/TrainingQuestionOption"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "TrainingQuestionOption": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "nullable": true
+              },
+              "isCorrect": {
+                "type": "boolean"
+              },
+              "trainingQuestionId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "trainingQuestion": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/TrainingQuestion"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "TrainingDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbstractDocument"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "training": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Training"
+                  }
+                ]
+              },
+              "trainingId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "body": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "RetailerTraining": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "retailer": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Retailer"
+                  }
+                ]
+              },
+              "retailerId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "training": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Training"
+                  }
+                ]
+              },
+              "trainingId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "lastStatus": {
+                "$ref": "#/components/schemas/TrainingStatusType"
+              },
+              "score": {
+                "type": "number",
+                "format": "double",
+                "nullable": true
+              },
+              "scoreRate": {
+                "type": "number",
+                "format": "double",
+                "nullable": true
+              },
+              "statuses": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RetailerTrainingStatus"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "TrainingStatusType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "InProgress",
+          "CourseFinished",
+          "TestCompleted"
+        ],
+        "enum": [
+          "InProgress",
+          "CourseFinished",
+          "TestCompleted"
+        ]
+      },
+      "RetailerTrainingStatus": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntityOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "retailerTraining": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/RetailerTraining"
+                  }
+                ]
+              },
+              "retailerTrainingId": {
+                "type": "string",
+                "format": "guid"
+              },
+              "statusType": {
+                "$ref": "#/components/schemas/TrainingStatusType"
+              }
+            }
+          }
+        ]
+      },
+      "PagedResultOfTraining": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Training"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "InteractiveTrainingDocumentVm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "trainingTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "moduleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "listTrainingCourseSlide": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/InteractiveTrainingCourseSlideVm"
+            }
+          }
+        }
+      },
+      "InteractiveTrainingCourseSlideVm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DocumentType"
+          }
+        }
+      },
+      "InteractiveTrainingDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "moduleId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "courseSlides": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CourseSlideContentDto"
+            }
+          },
+          "courseQuestions": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CourseQuestionsDto"
+            }
+          }
+        }
+      },
+      "CourseSlideContentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CourseQuestionsDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "options": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "correctOptionIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "VideoTrainingDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "courseURI": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PagedResultOfUser": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagedResultBase"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "results": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ChangePasswordData": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "currentPassword",
+          "newPassword"
+        ],
+        "properties": {
+          "currentPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "newPassword": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "errors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UserDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "administration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ProcessingDirectionType"
+              }
+            ]
+          }
+        }
+      },
+      "UserUpdateDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "administration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ProcessingDirectionType"
+              }
+            ]
+          }
+        }
+      },
+      "UserResetDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWT": {
+        "type": "apiKey",
+        "description": "Type into the textbox: Bearer {your JWT token}.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ]
+}

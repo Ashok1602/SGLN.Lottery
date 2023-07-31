@@ -1,0 +1,109 @@
+﻿@using ACG.SGLN.Lottery.Application.Reporting.Queries
+@model PdfViewModel<List<TrainingsByModuleReportDto>>
+@{
+    var score = Model.Data.Count() > 0 ? Model.Data.Count(d => d.ScoreRate != null && d.ScoreRate >= 50) / Model.Data.Count(): 0;
+}
+
+<style type="text/css">
+    tr, th, td {
+        white-space: nowrap;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 5px;
+    }
+
+    .pdf-report, .pdf-report tr, .pdf-report th {
+        border: 1px solid #222;
+    }
+
+    .pdf-label {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .pdf-value {
+        font-style: normal;
+    }
+
+    .pdf-section-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 15px 0px 5px 0px;
+    }
+
+    .pdf-report th {
+        color: white;
+        background-color: rgb(0, 109, 49);
+    }
+
+    .report-header .report-footer {
+        visibility: hidden !important;
+    }
+</style>
+
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" style="text-align:center; font-weight:bold;font-size:14px;">Rapport formation par module</td>
+        </tr>
+        @if (Model.Data.Count > 0)
+        {
+            <tr>
+                <td colspan="2">
+                    <table class="pdf-report">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; font-size:10px;" width="5%">N &deg;</th>
+                                <th style="text-align:center; font-size:10px;" width="5%">Civilité</th="10%">
+                                <th style="text-align:center; font-size:10px;" width="20%">Nom Complet</th>
+                                <th style="text-align:center; font-size:10px;" width="30%">Formation</th>
+                                <th style="text-align:center; font-size:10px;" width="10%">Module</th>
+                                <th style="text-align:center; font-size:10px;" width="10%">Date début</th>
+                                <th style="text-align:center; font-size:10px;" width="10%">Date fin</th>
+                                <th style="text-align:center; font-size:10px;" width="5%">Nbr d'heures</th>
+                                <th style="text-align:center; font-size:10px;" width="5%">Résultat</th="10%">
+                            </tr>
+                        </thead>
+                        @{int i = 1;}
+                        @foreach (var saleDetails in Model.Data)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                @{i++;}
+                                <td>@saleDetails.Civility</td>
+                                <td>@saleDetails.FirstName @saleDetails.LastName</td>
+                                <td>@saleDetails.Training</td>
+                                <td>@saleDetails.Module</td>
+                                <td>@saleDetails.TrainingDate</td>
+                                <td>@saleDetails.TestDate</td>
+                                <td>@saleDetails.CompleteDelay</td>
+                                <td>@saleDetails.ScoreRate %</td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-weight:bolder;font-size:11px;" colspan="3">- Nombre global de personnes ayant suivi la formation : @(i-1)</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-weight:bolder;font-size:11px;" colspan="3">- Nombre de personnes ayant suivi la formation sans test : @(Model.Data.Count(d=> string.IsNullOrEmpty(d.TestDate)))</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-weight:bolder;font-size:11px;" colspan="3">- Nombre de personnes ayant suivi la formation avec test : @(Model.Data.Count(d=> !string.IsNullOrEmpty(d.TestDate)))</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-weight:bolder;font-size:11px;" colspan="3">- Pourcentage de réussite : @score %</td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="font-weight:bold" colspan="3">Aucun résultat correspondant aux critères de recherche sélectionnés</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

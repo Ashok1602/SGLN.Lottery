@@ -1,0 +1,184 @@
+{
+  "createRequest": {
+    "test": "french",
+    "administratives": "Administratives",
+    "description": "Description",
+    "category": "Catégorie",
+    "commercials": "Commercials",
+    "techniques": "Techniques",
+    "document": "DOCUMENT",
+    "image": "IMAGE",
+    "audio": "AUDIO",
+    "gallery": "Choisir depuis votre galerie",
+    "cameraOption": "Prendre une photo ",
+    "buttonText": "Envoyer la demande",
+    "title": "AJOUT D’UNE DEMANDE",
+    "titleBelow": "Creer votre nouvelle demande ",
+    "permissionRequired": "Autorisations requises",
+    "allowHitRadio": "Autoriser Lottery à enregistrer de l'audio",
+    "noInternet": "Pas de connexion Internet",
+    "sendVoice": "Envoyer l’enregistrement",
+    "object": "Objet",
+    "descriptionPlaceHolder": "Saisir une description ...",
+    "holdText": "Maintenir pour enregistrer",
+    "alertCreateTitle": "Créer une demande",
+    "alertSuccessMessage": "Demande créée avec succès",
+    "cancelSuccess": "Demande annulée",
+    "pdfAlert": "format pdf",
+    "PdfDescription": "Veuillez choisir le fichier pdf",
+    "cancel": "Retour",
+    "delete": "Annuler",
+    "contester": "Contester",
+    "downloading": "Téléchargement...",
+    "downloadSuccess": "Téléchargement réussi",
+    "requestTitle": "MES DEMANDES",
+    "requestTitleBelow": "Consulation de vos demandes",
+    "downloadTitle": "SGLN document"
+  },
+  "common": {
+    "emptyData": "Pas de données",
+    "noReviewYet": "Aucune actualité à afficher.",
+    "noInternet": "Pas de connexion Internet",
+    "defaultMessage": "Quelque chose s'est mal passé",
+    "permission": "Permission refusée!",
+    "request": "Vous devez donner l'autorisation de stockage pour télécharger le fichier",
+    "invalidUserName": "Veuillez saisir un identifiant valide",
+    "Date": "Date: ",
+    "allAreMendatory": "Veuillez répondre à toutes les questions",
+    "ok": "OK",
+    "downloadFailed": "Échec du téléchargement",
+    "dh": "DH"
+  },
+  "documents": {
+    "docTitle": "DOCUMENTS OFFICIELS ET RESOURCES",
+    "docSubTitle": "Espace de téléchargements",
+    "mediaLibraryTitle": "LIBRAIRIE MÉDIATIQUE",
+    "legalNotice": "Mentions légales",
+    "legalNoticeDescription": [
+      "All forms of formal communication have a pre-planned arrangement which every person who indulges in it, has to follow. This pre-planned arrangement is known as a format. Legal Notice is one such type of formal communication which has its own format which details how and what information needs to be provided in the notice.",
+      "It is necessary for a person to stick to the format of legal notice while drafting it. A well-drafted legal notice helps a person to avail the quickest remedy. It makes the recipient agree to the terms of the party who is sending the notice and thus eliminates the need to take the matter to court."
+    ]
+  },
+  "login": {
+    "title": "SE CONNECTER",
+    "description": "Entrer votre identifiant et mot de passe pour se connecter a votre  espace",
+    "forgotPassword": "Mot de passe oublié?",
+    "usernamePlaceHolder": "Votre identifiant ...",
+    "passwordPlaceHolder": "Votre mot de passe ...",
+    "buttonText": "Connexion",
+    "passwordRegMsg": "Le mot de passe doit contenir au minimum 8 caractères, une lettre majuscule, un chiffre et un caractère spécial.",
+    "authenticationFailedTitle": "Authentification",
+    "authenticationFailedDesc": "Authentication échouée. Veuillez réessayer."
+  },
+  "menu": {
+    "demand": "Mes demandes",
+    "documents": "Documents & Ressources",
+    "alert": "Actualité",
+    "outils": "Boîte à outils",
+    "formation": "Formation",
+    "facturation": "Facturation",
+    "classification": "Classification & Incentives",
+    "mediaLibrary": "Librairie médiatique",
+    "logout": "Se déconnecter",
+    "dailyLimit": "Limite de vente"
+  },
+  "changePassword": {
+    "title": "Modifier mot de passe",
+    "currentPlaceHolder": "Entrer mot de passe actuel",
+    "newPlaceHolder": "Entrer nouveau mot de passe",
+    "confirmPassword": "Entrer confirmation mot de passe",
+    "buttonText": "Submit",
+    "passwordRegMsg": "Le mot de passe doit contenir au minimum 8 caractères, une lettre majuscule, un chiffre et un caractère spécial."
+  },
+  "screenTitles": {
+    "request": "Gestion des demandes",
+    "consultation": "Actualités"
+  },
+  "training": {
+    "placeHolderText": "Rechercher une formation ...",
+    "posted": "Publié le ",
+    "trainingDate": "Date de formation ",
+    "from": "le ",
+    "live": "Passée",
+    "video": "A venir",
+    "title": "SGLN",
+    "noDocument": "Aucun document",
+    "majDate": "Date MAJ le",
+    "trainingTitle": "ESPACE FORMATIONS",
+    "inProgress": "En cours",
+    "testAvailable": "Test disponible",
+    "testSuccess": "Terminé avec succés",
+    "testFailed": "Terminé avec échec",
+    "trainingAvailable": "Training disponible",
+    "traingingSubTitle": "Espace dédié aux formations "
+  },
+  "resources": {
+    "postedOn": "Publié le"
+  },
+  "trainingCompleteScreen": {
+    "felicitations": "Félicitations",
+    "completedTrainingMsg": "Vous avez terminé la formations; Souhaitez vous comencer le test",
+    "gotoTest": "Commencer le test",
+    "return": "Retour"
+  },
+  "testCompleteScreen": {
+    "youHaveCompletedTest": "Vous avez terminé les réponses",
+    "sendAnswer": "Envoi des reponses",
+    "return": "Retour",
+    "recommencer": "Recommencer"
+  },
+  "resultScreen": {
+    "sorry": "Nous somes désolé",
+    "wantToGiveTestAgain": "Souhaitez vous recomencer le test",
+    "downloadCertificate": "Télécharger votre certifuication"
+  },
+  "profileScreen": {
+    "myProfile": "MON PROFIL",
+    "myInfo": "Mes info personelles et commerciales",
+    "commercialInfo": "Info commerciales",
+    "personalInfo": "Info personnelles",
+    "annualTurnOver": "CA annuel",
+    "commisions": "Commissions",
+    "unPaid": "Impayés",
+    "currentBalance": "Solde actuel",
+    "retailerName": "NOM DÉTAILLANT",
+    "contactNo": "N° CONTRAT",
+    "dealerCode": "CODE DÉTAILLANT SGLN",
+    "dealerCodeOperator": "CODE DÉTAILLANT OPÉRATEUR",
+    "rc": "RC",
+    "tp": "TP",
+    "ice": "ICE",
+    "address": "ADRESSE LOCAL",
+    "telephone": "TÉLÉPHONE"
+  },
+  "invoiceScreen": {
+    "invoiceArea": "ESPACE FACTURES",
+    "invoiceDesc": "Espace dédié aux formations ",
+    "dateOfInvoice": "Date facture",
+    "amount": "Montant",
+    "allPaidMsg": "Montant payées pour toutes les factures des 6 derniers mois",
+    "unPaidMsg": "Montant impayées pour toutes les factures des 6 derniers mois"
+  },
+  "settingsScreen": {
+    "notification": "Notifications",
+    "unPaidMsg": "Montant impayées pour toutes les factures des 6 derniers mois",
+    "total": "Total",
+    "dateOfInvoice": "Date facture",
+    "amount": "Montant"
+  },
+  "incentiveScreen": {
+    "title": "PROGRAMME D’EXCELLENCE ET INCENTIVES",
+    "subTitle": "Mes info personelles et commerciales",
+    "programExellence": "Programme d’excellence",
+    "ca": "CA",
+    "classification": "Classification",
+    "points": "Points fidélités",
+    "createdDate": "Date début",
+    "endDate": "Date fin",
+    "goal": "OBJECTIF",
+    "production": "RÉALISATION",
+    "stillToAchieve": "RESTE À RÉALISER",
+    "bonus": "BONUS",
+    "incentives": "Incentives"
+  }
+}

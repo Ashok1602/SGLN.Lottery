@@ -1,0 +1,511 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ACG.SGLN.Lottery.WebApi.Mobile</name>
+    </assembly>
+    <members>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AnnouncementsController">
+            <summary>
+            Announcements
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AnnouncementsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.AnnouncementCriterea)">
+            <summary>
+            Get Announcements list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="announcementCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AnnouncementsController.GetById(System.Guid)">
+            <summary>
+            Get Announcement by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AuthController">
+            <summary>
+            Auth
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AuthController.SignIn(ACG.SGLN.Lottery.Application.Users.UserSignInDto)">
+            <summary>
+            Signing IN
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.AuthController.LogOut(System.String)">
+            <summary>
+            Logging out
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.CitiesController">
+            <summary>
+            Cities
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.CitiesController.Get">
+            <summary>
+            List of cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController">
+            <summary>
+            Document upload/download
+            </summary>
+        </member>
+        <member name="P:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController.Download(ACG.SGLN.Lottery.Domain.Enums.DocumentType,System.Guid,System.Boolean)">
+            <summary>
+            Download a document
+            </summary>
+            <param name="type"></param>
+            <param name="id"></param>
+            <param name="isThumbnail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController.DownloadRequestNatureImage(ACG.SGLN.Lottery.Domain.Enums.RequestNatureType)">
+            <summary>
+            Download static documents by Value
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController.DownloadIncentiveCategoryImage(ACG.SGLN.Lottery.Domain.Enums.GameType)">
+            <summary>
+            Download static documents by Value
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.DocumentsController.GetApplicationDocuments(System.Nullable{ACG.SGLN.Lottery.Domain.Enums.DocumentType})">
+            <summary>
+            Get application documents
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.ExcellenceProgramsController">
+            <summary>
+            Excellence Program
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.ExcellenceProgramsController.GetRetailerClassification">
+            <summary>
+            Get Excellence Program
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.ExcellenceProgramsController.GetIncentives">
+            <summary>
+            Get Incentives
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.InvoicesController">
+            <summary>
+            Invoices
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.InvoicesController.GetByDate(ACG.SGLN.Lottery.Domain.Entities.Criterias.InvoiceCriterea)">
+            <summary>
+            List Invoices By Date
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.InvoicesController.GetInvoices">
+            <summary>
+            Get status invoices
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.InvoicesController.GetRetailerLoyaltyPoints">
+            <summary>
+            Get Loyalty Points 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.NotificationsController">
+            <summary>
+            Notifications (for testing)
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.NotificationsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.NotificationCriterea)">
+            <summary>
+            List all Notifications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.NotificationsController.GetStrippedNotifications">
+            <summary>
+            All Alerts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.NotificationsController.Delete(System.Guid)">
+            <summary>
+            Delete a Notification
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestVm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController">
+            <summary>
+            Requests
+            </summary>
+        </member>
+        <member name="P:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestCriterea)">
+            <summary>
+            Get Requests list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="requestCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.GetById(System.Guid)">
+            <summary>
+            Get Request by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.Create(ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestVm)">
+            <summary>
+            Create new request
+            </summary>
+            <param name="vm">request data</param>
+            <returns>Created request object</returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.Contest(System.Guid,System.String)">
+            <summary>
+            contest request by retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.Cancel(System.Guid,System.String)">
+            <summary>
+            Cancel request by retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RequestsController.GetCommentsById(System.Guid)">
+            <summary>
+            RequestComment by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController">
+            <summary>
+            Retailers
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.GetCurrentRetailer">
+            <summary>
+            Get Current Retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.GetAgent">
+            <summary>
+            Get Retailer Agent 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.ActivateNotification(System.String)">
+            <summary>
+            Activates notifications for a retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.DeactivateNotification(System.String)">
+            <summary>
+            deactivates notifications for a retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.GetDocuments(System.Guid,System.Nullable{ACG.SGLN.Lottery.Domain.Enums.DocumentType})">
+            <summary>
+            Get Retailer documents
+            </summary>
+            <param name="id"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.GetNotifications">
+            <summary>
+            Get Notifications from current retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.RetailersController.GetStrippedNotifications">
+            <summary>
+            Get Notifications from current retailer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingModulesController">
+            <summary>
+            TrainingModules
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingModulesController.Get">
+            <summary>
+            List all TrainingModules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingModulesController.GetStripped">
+            <summary>
+            List stripped TrainingModules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingModulesController.GetById(System.Guid)">
+            <summary>
+            List TrainingModule by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController">
+            <summary>
+            Trainings
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RetailerTrainingCriterea)">
+            <summary>
+            Get Trainings list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="trainingCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.GetById(System.Guid)">
+            <summary>
+            Get Training by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.GetTrainingQuestionsById(System.Guid)">
+            <summary>
+            Get Training by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.GetTrainingSlidesById(System.Guid)">
+            <summary>
+            Get Training slides by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.Start(System.Guid)">
+            <summary>
+            Start Training 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.Finish(System.Guid)">
+            <summary>
+            Finish Training 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.TrainingsController.Complete(System.Guid,System.Collections.Generic.List{System.Guid})">
+            <summary>
+            Finish Test 
+            </summary>
+            <param name="id"></param>
+            <param name="optionIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController">
+            <summary>
+            Users
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.UserCriteria)">
+            <summary>
+            Get users list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="userCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.GetById(System.String)">
+            <summary>
+            Get user by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.GetByRoles(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Users by role 
+            </summary>
+            <param name="rolenames">User RoleName</param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.GetConnectedUser">
+            <summary>
+            Get logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.ChangePassword(ACG.SGLN.Lottery.Application.Users.ChangePasswordData)">
+            <summary>
+            Changes usr passuser
+            </summary>
+            <param name="changePasswordData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.UpdateUser(System.String,ACG.SGLN.Lottery.Application.Users.UserUpdateDto)">
+            <summary>
+            Update user details 
+            </summary>
+            <param name="id"></param>
+            <param name="userUpdateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.ForgotPassword(System.String)">
+            <summary>
+            Init ForgotPassword
+            </summary>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Controllers.UsersController.ResetPassword(System.String,System.String)">
+            <summary>
+            Reset Password
+            </summary>
+            <param name="newPassword"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebApi.Mobile.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebApi.Mobile.Startup.GetConverters">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.OfficialDocumentsController">
+            <summary>
+            Official Documents
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.OfficialDocumentsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.ApplicationDocumentCriterea)">
+            <summary>
+            Get ApplicationDocuments list
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="ApplicationDocumentCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.RequestCategoriesController">
+            <summary>
+            RequestCategories 
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.RequestCategoriesController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestCategoriesCriterea)">
+            <summary>
+            List all RequestCategorys
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.RequestCategoriesController.GetStripped">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.Mobile.Controllers.RequestCategoriesController.GetStrippedByNature(ACG.SGLN.Lottery.Domain.Enums.RequestNatureType)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController">
+            <summary>
+            RequestObjects (for testing)
+            </summary>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},ACG.SGLN.Lottery.Domain.Entities.Criterias.RequestObjectCriterea)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.GetStrippedByCategory(System.Guid)">
+            <summary>
+            List all RequestObjects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ACG.SGLN.Lottery.WebUI.BO.Controllers.RequestObjectsController.GetValidity(System.DateTime)">
+            <summary>
+            Get Whether list is valid or not
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
